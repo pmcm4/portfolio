@@ -1,0 +1,148 @@
+.root {
+  background-color: black;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background-color: black;
+}
+.projHeader {
+  width: 700px;
+  height: 300px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.projHeaderIntro {
+  color: white;
+  font-size: 80px;
+  font-weight: 700;
+}
+.introParaProj {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+.projectContainer {
+  font-family: sans-serif;
+  margin: 3px auto 150px;
+  padding: 1.5em;
+  width: 70em;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  row-gap: 50px;
+}
+
+figure {
+  color: white;
+  background-color: black;
+  float: left;
+  -webkit-transform: perspective(500);
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  height: 300px;
+  width: 298px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure:hover {
+  -webkit-transform: perspective(500) rotateX(100deg) translateY(-3em) translateZ(8em);
+}
+img {
+  display: block;
+  height: 300px;
+  width: 295px;
+  object-fit: cover;
+  -webkit-transition: 0.5s;
+  border: 2px solid white;
+}
+figure:hover img {
+  box-shadow: none;
+}
+figcaption {
+  background-color: black;
+  border: solid 3px white;
+  color: white;
+  -webkit-transform: rotateX(-100deg);
+  -webkit-transform-origin: 100% 0;
+  -webkit-transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  gap: 20px;
+}
+figure:hover figcaption {
+  box-shadow: 0 20px 15px -10px hsla(0, 0%, 0%, 0.25);
+}
+h3 {
+  font-weight: bold;
+  bottom: 20px;
+}
+.figdesc {
+  font-size: 15px;
+  bottom: 15px;
+  position: relative;
+}
+.buttons {
+  display: flex;
+  height: 30px;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  width: 220px;
+  bottom: 10px;
+  position: relative;
+}
+.github {
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.github:hover {
+  background-color: white;
+  border: 2px solid white;
+  color: black;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.demo {
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.demo:hover {
+  background-color: white;
+  border: 2px solid white;
+  color: black;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100px;
+}

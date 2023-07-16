@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+$color-light-gray: #eaece5;
+
+.root {
+  background-color: #141414;
+}
+.body {
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+}
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  align-items: center;
+  margin-top: 100px;
+}
+.right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px 0px 0px;
+}
+.pic {
+  width: 400px;
+  border-radius: 1000px;
+}
+.homeImage {
+  width: 550px;
+  height: 550px;
+  border: none;
+}
+.header {
+  color: white;
+  font-size: 100px;
+  text-align: start;
+  width: 700px;
+}
+.p1 {
+  color: white;
+  font-size: 40px;
+  text-align: start;
+  width: 700px;
+}
+.textwrapper {
+}
+
+.waviy {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: flip 3s infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+.intro {
+  font-size: 40px;
+  text-align: start;
+}
+
+.text {
+  font-size: 8em;
+  position: relative;
+  text-transform: full-width;
+  display: flex;
+
+  .letter {
+    position: relative;
+    display: flex;
+
+    .source {
+      color: gray;
+      -webkit-text-stroke: 0.01em rgba(black, 0.3);
+      display: flex;
+    }
+
+    .overlay,
+    .shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+    $color-light-gray: #cccccc;
+    .overlay {
+      background-image: linear-gradient(90deg, white 50%, lighten($color-light-gray, 2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: rotateY(-30deg) skew(0, -10deg);
+      transform-origin: left;
+      animation: overlay 3s infinite ease-out var(--delay);
+    }
+
+    .shadow {
+      filter: blur(5px);
+      background-image: linear-gradient(90deg, rgba(black, 0.4) 30%, transparent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: skew(0, 20deg) translateY(0.1em) translateX(0.05em);
+      animation: shadow 3s infinite var(--delay);
+    }
+    font-weight: 700;
+    font-size: 120px;
+    text-align: center;
+  }
+}
+
+@keyframes shadow {
+  0%,
+  20%,
+  100% {
+    transform: skew(0, 20deg) translateY(0.1em) translateX(0.05em);
+    opacity: 1;
+  }
+  10% {
+    transform: skew(0, 0) translateY(0) translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes overlay {
+  0%,
+  20%,
+  100% {
+    transform: rotateY(-30deg) skew(0, -10deg);
+  }
+  10% {
+    transform: rotateY(0deg) skew(0, 0);
+  }
+}
+
+@keyframes typed {
+  /* Keyframe animation code */
+}
+
+@keyframes beam-blink {
+  75% {
+    border-color: transparent;
+  }
+}
+// Love dynamically typed text? You're gonna love this
+// Edit these strings to see them typed on the screen:
+$strings: ('Computer Science Student' 'Aspiring Developer' 'Passionate Learner');
+
+// now for some timing (in seconds)
+$durCharFwd: 0.1; // character typed
+$durFullGap: 2; // time between typed/delete
+$durCharBwd: 0.08; // character deleted
+$durDoneGap: 1; // time between strings
+
+// initializing some variables and functions ✊🏼
+$charCount: 0;
+$durTotal: 0;
+@each $string in $strings {
+  $charCount: $charCount + str-length($string);
+  $durTotal: $durTotal +
+    (str-length($string) * ($durCharFwd + $durCharBwd)) +
+    $durFullGap +
+    $durDoneGap;
+}
+@function percent($string, $letter, $modifier) {
+  $stringsPast: $string - 1;
+  $time: 0;
+  @while $stringsPast > 0 {
+    $time: $time +
+      (($durCharFwd + $durCharBwd) * (str-length(nth($strings, $stringsPast)))) +
+      $durFullGap +
+      $durDoneGap;
+    $stringsPast: $stringsPast - 1;
+  }
+  @if $letter <= str-length(nth($strings, $string)) {
+    $time: $time + ($durCharFwd * ($letter - 1));
+  } @else {
+    $time: $time +
+      ($durCharFwd * str-length(nth($strings, $string))) +
+      $durFullGap +
+      ($durCharBwd * ($letter - str-length(nth($strings, $string))));
+  }
+  @return ($time / $durTotal * 100 + $modifier) + '%';
+}
+$currentPercentage: 0;
+// now THIS is where the magic happens... ✨
+@keyframes typed {
+  @for $i from 1 through length($strings) {
+    // @for $j from 1 through (str-length(nth($strings, $i)) * 2 - 1) {
+    @for $j from 1 through (str-length(nth($strings, $i)) * 2) {
+      /* string #{$i}, char #{$j} */
+      @if $j < str-length(nth($strings, $i)) * 2 {
+        // not last character deleted
+        #{percent($i, $j, 0)},
+        #{percent($i, $j+1, -0.001)} {
+          @if $j <= str-length(nth($strings, $i)) {
+            content: quote(#{str_slice(nth($strings, $i), 1, $j)});
+          } @else {
+            content: quote(
+              #{str_slice(
+                  nth($strings, $i),
+                  1,
+                  str-length(nth($strings, $i)) - ($j - str-length(nth($strings, $i)))
+                )}
+            );
+          }
+        }
+      } @else {
+        @if $i < length($strings) {
+          // not last string
+          #{percent($i, $j, 0)},
+          #{percent($i+1, 1, -0.001)} {
+            content: '​'; // zero-width space to retain element height
+          }
+        } @else {
+          // last string
+          #{percent($i, $j, 0)},
+          100% {
+            content: '​'; // zero-width space to retain element height
+          }
+        }
+      }
+    }
+  }
+}
+
+.typingtext::after {
+  content: 'CSS typed this string!';
+  animation: typed 10s linear 2s infinite, beam-blink 2s infinite;
+  color: white;
+  text-align: start;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.brIntro {
+}
+.topdiv {
+  display: flex;
+  flex-direction: row;
+  height: 800px;
+}
+.botdiv {
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: end;
+}
+.container {
+  width: 1300px;
+  background-color: rgba(255, 0, 0, 0);
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 200px;
+  align-items: start;
+  row-gap: 30px;
+}
+.introHead {
+  font-weight: 700;
+  font-size: 80px;
+  color: white;
+  text-align: start;
+  align-items: center;
+  display: flex;
+}
+.introP {
+  color: white;
+  text-align: justify;
+  font-size: 30px;
+}
+.cvBtn {
+  width: 200px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  top: 40px;
+}
+
+.cvBtn:hover {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid white;
+  color: black;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  top: 40px;
+}

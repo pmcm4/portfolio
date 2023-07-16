@@ -1,0 +1,207 @@
+.root {
+  background-color: black;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top {
+  background-color: rgba(255, 0, 0, 0);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.bottom {
+  background-color: rgba(0, 128, 0, 0);
+  width: 100%;
+}
+.AboutHead {
+  color: white;
+  font-weight: 700;
+  font-size: 80px;
+  text-align: center;
+  width: 700px;
+}
+.aboutP {
+  color: white;
+  text-align: justify;
+  width: 700px;
+  font-size: 20px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+/*Intro Section*/
+.intro {
+  padding: 200px 0;
+}
+
+.original {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+button {
+  padding: 10px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.arrow {
+  display: inline-block;
+  animation: arrow 0.7s ease-in alternate infinite;
+}
+
+/*Timeline SECTION*/
+.timeline ul {
+  padding: 50px 0;
+  overflow-x: hidden;
+}
+
+.timeline li {
+  position: relative;
+  width: 6px;
+  padding-top: 50px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  list-style-type: none;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.timeline div {
+  position: relative;
+  width: 400px;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, #fe6976, #f36777);
+}
+
+.timeline li:nth-child(odd) div {
+  left: 45px;
+  background-image: linear-gradient(180deg, rgba(254, 105, 118, 0) 0%, rgba(243, 103, 119, 0) 100%);
+  border: 4px solid white;
+  color: white;
+  text-align: justify;
+}
+.timeline li:nth-child(even) div {
+  left: -439px;
+  color: white;
+  border: 4px solid white;
+  background-image: linear-gradient(180deg, rgba(254, 105, 118, 0) 0%, rgba(243, 103, 119, 0) 100%);
+  text-align: justify;
+}
+.timeline li.in-view::before {
+  background: #fe6976;
+}
+
+.timeline li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+.timeline time {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.timeline div::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  bottom: 7px;
+}
+
+.timeline li:nth-child(odd) div::after {
+  left: -18px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.timeline li:nth-child(even) div::after {
+  right: -18px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent white;
+}
+
+/*ANIMATION EFFECTS*/
+@keyframes arrow {
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+/*GOING RESPONSIVE*/
+@media screen and (max-width: 900px) {
+  .timeline div {
+    width: 250px;
+  }
+  .timeline li:nth-child(even) div {
+    left: -289px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .intro {
+    padding: 200px 0;
+  }
+
+  .timeline ul li {
+    margin: 0 20px;
+  }
+
+  .timeline li div {
+    width: calc(100vw - 70px);
+  }
+  .timeline li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline li:nth-child(even) div::after {
+    right: calc(100vw - 71px);
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #f45b69 transparent transparent;
+  }
+}

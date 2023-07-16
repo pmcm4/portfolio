@@ -35,15 +35,28 @@ export const Home = ({ className }: HomeProps) => {
         </div>
     );
 
-        const downloadfileURL=(url: any)=>{
-            const aTag = document.createElement('a')
-            const fileName = url.split('/').pop()
-            aTag.href=url
-            aTag.setAttribute('download',fileName)
-            document.body.appendChild(aTag)
-            aTag.click()
-            aTag.remove()
-        }
+    const downloadfileURL = (url: string) => {
+        fetch(url)
+          .then(response => response.blob())
+          .then(blob => {
+            const aTag = document.createElement('a');
+            const fileName = url.split('/').pop();
+            const blobURL = URL.createObjectURL(blob);
+      
+            aTag.href = blobURL;
+            aTag.setAttribute('download', fileName || 'file');
+            document.body.appendChild(aTag);
+            aTag.click();
+            aTag.remove();
+      
+            // Clean up the Blob URL after the download starts
+            URL.revokeObjectURL(blobURL);
+          })
+          .catch(error => {
+            console.error('Error downloading file:', error);
+          });
+      };
+      
 
     return (
         <div className={classNames(styles.root, className)}>

@@ -10,7 +10,7 @@ export interface HomeProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-const CV_FILE_URL = 'http://localhost:3000/PaoloMoratoCV.pdf'
+const CV_FILE_URL = 'https://pmcm.vercel.app//PaoloMoratoCV.pdf'
 
 export const Home = ({ className }: HomeProps) => {
     const Text = ({ value }: { value: string }) => (

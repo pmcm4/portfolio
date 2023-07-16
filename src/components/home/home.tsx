@@ -10,7 +10,7 @@ export interface HomeProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-const CV_FILE_URL = 'https://pmcm.vercel.app//PaoloMoratoCV.pdf'
+const CV_FILE_URL = '/PaoloMoratoCV.pdf';
 
 export const Home = ({ className }: HomeProps) => {
     const Text = ({ value }: { value: string }) => (
@@ -36,27 +36,15 @@ export const Home = ({ className }: HomeProps) => {
     );
 
     const downloadfileURL = (url: string) => {
-        fetch(url)
-          .then(response => response.blob())
-          .then(blob => {
-            const aTag = document.createElement('a');
-            const fileName = url.split('/').pop();
-            const blobURL = URL.createObjectURL(blob);
-      
-            aTag.href = blobURL;
-            aTag.setAttribute('download', fileName || 'file');
-            document.body.appendChild(aTag);
-            aTag.click();
-            aTag.remove();
-      
-            // Clean up the Blob URL after the download starts
-            URL.revokeObjectURL(blobURL);
-          })
-          .catch(error => {
-            console.error('Error downloading file:', error);
-          });
-      };
-      
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'PaoloMoratoCV.pdf'; // Set the desired filename here
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    };
 
     return (
         <div className={classNames(styles.root, className)}>
@@ -81,6 +69,11 @@ export const Home = ({ className }: HomeProps) => {
                         />
                     </div>
                 </div>
+                <div className={styles.timeline}>
+                    <h1>
+                        My Introduction <span className={styles.arrow}>&#8595;</span>
+                    </h1>
+                </div>
                 <div className={styles.botdiv}>
                     <div className={styles.container}>
                         <h1 className={styles.introHead}>INTRODUCTION</h1>
@@ -94,7 +87,14 @@ export const Home = ({ className }: HomeProps) => {
                             and software applications.
                             <br /> <br /> If you have any inquiries, please feel free to contact me.
                         </p>
-                        <button className={styles.cvBtn} onClick={()=>{downloadfileURL(CV_FILE_URL)}}>Download Resume</button>
+                        <button
+                            className={styles.cvBtn}
+                            onClick={() => {
+                                downloadfileURL(CV_FILE_URL);
+                            }}
+                        >
+                            Download Resume
+                        </button>
                     </div>
                 </div>
             </div>

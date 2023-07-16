@@ -308,3 +308,23 @@ $currentPercentage: 0;
   cursor: pointer;
   top: 40px;
 }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  bottom: 60px;
+}
+@keyframes arrow {
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.arrow {
+  display: inline-block;
+  animation: arrow 0.7s ease-in alternate infinite;
+}

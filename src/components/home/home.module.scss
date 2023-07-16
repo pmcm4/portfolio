@@ -254,7 +254,7 @@ $currentPercentage: 0;
 }
 
 .typingtext::after {
-  content: 'CSS typed this string!';
+  content: '';
   animation: typed 10s linear 2s infinite, beam-blink 2s infinite;
   color: white;
   text-align: start;

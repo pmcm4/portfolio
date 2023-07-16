@@ -5,11 +5,13 @@ $color-light-gray: #eaece5;
 .root {
   background-color: #141414;
 }
+
 .body {
   background-color: rgba(0, 0, 0, 0);
   display: flex;
   flex-direction: column;
 }
+
 .left {
   width: 50%;
   display: flex;
@@ -17,7 +19,9 @@ $color-light-gray: #eaece5;
   font-size: 40px;
   align-items: center;
   margin-top: 100px;
+  text-align: start;
 }
+
 .right {
   width: 50%;
   display: flex;
@@ -25,27 +29,32 @@ $color-light-gray: #eaece5;
   flex-direction: column;
   margin: 100px 0px 0px;
 }
+
 .pic {
   width: 400px;
   border-radius: 1000px;
 }
+
 .homeImage {
   width: 550px;
   height: 550px;
   border: none;
 }
+
 .header {
   color: white;
   font-size: 100px;
   text-align: start;
   width: 700px;
 }
+
 .p1 {
   color: white;
   font-size: 40px;
   text-align: start;
   width: 700px;
 }
+
 .textwrapper {
 }
 
@@ -55,6 +64,7 @@ $color-light-gray: #eaece5;
   flex-direction: row;
   width: 700px;
 }
+
 .waviy span {
   position: relative;
   display: inline-block;
@@ -64,12 +74,14 @@ $color-light-gray: #eaece5;
   animation: flip 3s infinite;
   animation-delay: calc(0.2s * var(--i));
 }
+
 @keyframes flip {
   0%,
   80% {
     transform: rotateY(360deg);
   }
 }
+
 .intro {
   font-size: 40px;
   text-align: start;
@@ -80,47 +92,52 @@ $color-light-gray: #eaece5;
   position: relative;
   text-transform: full-width;
   display: flex;
+}
 
-  .letter {
-    position: relative;
-    display: flex;
+.letter {
+  position: relative;
+  display: flex;
+}
 
-    .source {
-      color: gray;
-      -webkit-text-stroke: 0.01em rgba(black, 0.3);
-      display: flex;
-    }
+.source {
+  color: gray;
+  -webkit-text-stroke: 0.01em rgba(black, 0.3);
+  display: flex;
+}
 
-    .overlay,
-    .shadow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      user-select: none;
-    }
-    $color-light-gray: #cccccc;
-    .overlay {
-      background-image: linear-gradient(90deg, white 50%, lighten($color-light-gray, 2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transform: rotateY(-30deg) skew(0, -10deg);
-      transform-origin: left;
-      animation: overlay 3s infinite ease-out var(--delay);
-    }
+.overlay,
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  user-select: none;
+}
 
-    .shadow {
-      filter: blur(5px);
-      background-image: linear-gradient(90deg, rgba(black, 0.4) 30%, transparent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transform: skew(0, 20deg) translateY(0.1em) translateX(0.05em);
-      animation: shadow 3s infinite var(--delay);
-    }
-    font-weight: 700;
-    font-size: 120px;
-    text-align: center;
-  }
+$color-light-gray: #cccccc;
+
+.overlay {
+  background-image: linear-gradient(90deg, white 50%, lighten($color-light-gray, 2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: rotateY(-30deg) skew(0, -10deg);
+  transform-origin: left;
+  animation: overlay 3s infinite ease-out var(--delay);
+}
+
+.shadow {
+  filter: blur(5px);
+  background-image: linear-gradient(90deg, rgba(black, 0.4) 30%, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: skew(0, 20deg) translateY(0.1em) translateX(0.05em);
+  animation: shadow 3s infinite var(--delay);
+}
+
+.text .letter {
+  font-weight: 700;
+  font-size: 120px;
+  text-align: center;
 }
 
 @keyframes shadow {
@@ -156,19 +173,17 @@ $color-light-gray: #eaece5;
     border-color: transparent;
   }
 }
-// Love dynamically typed text? You're gonna love this
-// Edit these strings to see them typed on the screen:
+
 $strings: ('Computer Science Student' 'Aspiring Developer' 'Passionate Learner');
 
-// now for some timing (in seconds)
 $durCharFwd: 0.1; // character typed
 $durFullGap: 2; // time between typed/delete
 $durCharBwd: 0.08; // character deleted
 $durDoneGap: 1; // time between strings
 
-// initializing some variables and functions ✊🏼
 $charCount: 0;
 $durTotal: 0;
+
 @each $string in $strings {
   $charCount: $charCount + str-length($string);
   $durTotal: $durTotal +
@@ -176,9 +191,11 @@ $durTotal: 0;
     $durFullGap +
     $durDoneGap;
 }
+
 @function percent($string, $letter, $modifier) {
   $stringsPast: $string - 1;
   $time: 0;
+
   @while $stringsPast > 0 {
     $time: $time +
       (($durCharFwd + $durCharBwd) * (str-length(nth($strings, $stringsPast)))) +
@@ -186,6 +203,7 @@ $durTotal: 0;
       $durDoneGap;
     $stringsPast: $stringsPast - 1;
   }
+
   @if $letter <= str-length(nth($strings, $string)) {
     $time: $time + ($durCharFwd * ($letter - 1));
   } @else {
@@ -194,17 +212,16 @@ $durTotal: 0;
       $durFullGap +
       ($durCharBwd * ($letter - str-length(nth($strings, $string))));
   }
+
   @return ($time / $durTotal * 100 + $modifier) + '%';
 }
+
 $currentPercentage: 0;
-// now THIS is where the magic happens... ✨
+
 @keyframes typed {
   @for $i from 1 through length($strings) {
-    // @for $j from 1 through (str-length(nth($strings, $i)) * 2 - 1) {
     @for $j from 1 through (str-length(nth($strings, $i)) * 2) {
-      /* string #{$i}, char #{$j} */
       @if $j < str-length(nth($strings, $i)) * 2 {
-        // not last character deleted
         #{percent($i, $j, 0)},
         #{percent($i, $j+1, -0.001)} {
           @if $j <= str-length(nth($strings, $i)) {
@@ -221,13 +238,11 @@ $currentPercentage: 0;
         }
       } @else {
         @if $i < length($strings) {
-          // not last string
           #{percent($i, $j, 0)},
           #{percent($i+1, 1, -0.001)} {
             content: '​'; // zero-width space to retain element height
           }
         } @else {
-          // last string
           #{percent($i, $j, 0)},
           100% {
             content: '​'; // zero-width space to retain element height
@@ -247,13 +262,16 @@ $currentPercentage: 0;
   white-space: nowrap;
   overflow: hidden;
 }
+
 .brIntro {
 }
+
 .topdiv {
   display: flex;
   flex-direction: row;
   height: 800px;
 }
+
 .botdiv {
   height: 900px;
   display: flex;
@@ -262,6 +280,7 @@ $currentPercentage: 0;
   align-content: center;
   justify-content: end;
 }
+
 .container {
   width: 1300px;
   background-color: rgba(255, 0, 0, 0);
@@ -272,6 +291,7 @@ $currentPercentage: 0;
   align-items: start;
   row-gap: 30px;
 }
+
 .introHead {
   font-weight: 700;
   font-size: 80px;
@@ -280,11 +300,13 @@ $currentPercentage: 0;
   align-items: center;
   display: flex;
 }
+
 .introP {
   color: white;
   text-align: justify;
   font-size: 30px;
 }
+
 .cvBtn {
   width: 200px;
   height: 50px;
@@ -318,6 +340,7 @@ $currentPercentage: 0;
   position: relative;
   bottom: 60px;
 }
+
 @keyframes arrow {
   100% {
     transform: translateY(10px);
@@ -327,4 +350,160 @@ $currentPercentage: 0;
 .arrow {
   display: inline-block;
   animation: arrow 0.7s ease-in alternate infinite;
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+  .topdiv {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .typingtext::after{
+    font-size: 30px;
+  }
+  .introHead {
+    font-size: 40px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .pic {
+    width: 300px;
+  }
+
+  .homeImage {
+    width: 400px;
+    height: 400px;
+  }
+
+  .header {
+    font-size: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+
+  .p1 {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .waviy {
+    width: 100%;
+  }
+
+  .waviy span {
+    font-size: 30px;
+  }
+
+  .text .letter {
+    font-size: 60px;
+  }
+
+  .text .letter .source {
+    font-size: 80px;
+  }
+  .text .letter .shadow {
+    font-size: 80px;
+  }
+  .text .letter .overlay {
+    font-size: 80px;
+  }
+
+  .typingtext::after{
+    font-size: 25px;
+  }
+
+  .intro {
+    font-size: 20px;
+  }
+
+  .container {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .introHead {
+    font-size: 60px;
+  }
+
+  .introP {
+    font-size: 20px;
+  }
+
+  .cvBtn {
+    width: 150px;
+    height: 40px;
+    font-size: 12px;
+    top: 20px;
+  }
+
+  .timeline {
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-top: 40px;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+
+  .p1 {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .waviy span {
+    font-size: 20px;
+  }
+
+  .text .letter {
+    font-size: 40px;
+  }
+
+  .text .letter .source {
+    font-size: 70px;
+  }
+  .text .letter .shadow {
+    font-size: 70px;
+  }
+  .text .letter .overlay {
+    font-size: 70px;
+  }
+
+  .intro {
+    font-size: 40px;
+  }
+
+  .introHead {
+    font-size: 40px;
+  }
+
+  .introP {
+    font-size: 15px;
+  }
+
+  .cvBtn {
+    width: 120px;
+    height: 30px;
+    font-size: 10px;
+    top: 10px;
+  }
 }

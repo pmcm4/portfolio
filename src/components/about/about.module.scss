@@ -113,7 +113,7 @@ h1 {
   position: relative;
   width: 400px;
   padding: 20px;
-  background-image: linear-gradient(to bottom, #fe6976, #f36777);
+  background-image: linear-gradient(to bottom, white, white);
 }
 
 .timeline li:nth-child(odd) div {
@@ -131,7 +131,7 @@ h1 {
   text-align: justify;
 }
 .timeline li.in-view::before {
-  background: #fe6976;
+  background: white;
 }
 
 .timeline li.in-view div {
@@ -175,10 +175,49 @@ h1 {
 }
 
 /*GOING RESPONSIVE*/
+
+@media screen and (max-width: 1200px) {
+  .top {
+    width: 80%;
+  }
+
+  .AboutHead {
+    font-size: 60px;
+  }
+
+  .aboutP {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .timeline div {
+    width: 300px;
+  }
+
+  .timeline li:nth-child(even) div {
+    left: -339px;
+  }
+}
+
+
 @media screen and (max-width: 900px) {
+  .top {
+    width: 90%;
+  }
+
+  .AboutHead {
+    font-size: 40px;
+  }
+
+  .aboutP {
+    width: 100%;
+    font-size: 15px;
+  }
+
   .timeline div {
     width: 250px;
   }
+
   .timeline li:nth-child(even) div {
     left: -289px;
   }
@@ -186,7 +225,17 @@ h1 {
 
 @media screen and (max-width: 600px) {
   .intro {
-    padding: 200px 0;
+    padding: 100px 0;
+  }
+
+  .AboutHead {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .aboutP {
+    width: 100%;
+    font-size: 12px;
   }
 
   .timeline ul li {
@@ -196,12 +245,14 @@ h1 {
   .timeline li div {
     width: calc(100vw - 70px);
   }
+
   .timeline li:nth-child(even) div {
     left: 45px;
   }
+
   .timeline li:nth-child(even) div::after {
     right: calc(100vw - 71px);
     border-width: 8px 16px 8px 0;
-    border-color: transparent #f45b69 transparent transparent;
+    border-color: transparent white transparent transparent;
   }
 }

@@ -1,6 +1,7 @@
 .root {
   background-color: black;
 }
+
 .body {
   display: flex;
   flex-direction: column;
@@ -8,6 +9,7 @@
   justify-items: center;
   background-color: black;
 }
+
 .projHeader {
   width: 700px;
   height: 300px;
@@ -23,6 +25,7 @@
   font-size: 80px;
   font-weight: 700;
 }
+
 .introParaProj {
   color: white;
   text-align: center;
@@ -60,6 +63,7 @@ figure {
 figure:hover {
   -webkit-transform: perspective(500) rotateX(100deg) translateY(-3em) translateZ(8em);
 }
+
 img {
   display: block;
   height: 300px;
@@ -68,9 +72,11 @@ img {
   -webkit-transition: 0.5s;
   border: 2px solid white;
 }
+
 figure:hover img {
   box-shadow: none;
 }
+
 figcaption {
   background-color: black;
   border: solid 3px white;
@@ -84,18 +90,22 @@ figcaption {
   padding: 1em;
   gap: 20px;
 }
+
 figure:hover figcaption {
   box-shadow: 0 20px 15px -10px hsla(0, 0%, 0%, 0.25);
 }
+
 h3 {
   font-weight: bold;
   bottom: 20px;
 }
+
 .figdesc {
   font-size: 15px;
   bottom: 15px;
   position: relative;
 }
+
 .buttons {
   display: flex;
   height: 30px;
@@ -107,26 +117,8 @@ h3 {
   bottom: 10px;
   position: relative;
 }
-.github {
-  background-color: rgba(255, 255, 255, 0);
-  border: 2px solid white;
-  color: white;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  width: 100px;
-}
 
-.github:hover {
-  background-color: white;
-  border: 2px solid white;
-  color: black;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  width: 100px;
-}
-
+.github,
 .demo {
   background-color: rgba(255, 255, 255, 0);
   border: 2px solid white;
@@ -137,6 +129,7 @@ h3 {
   width: 100px;
 }
 
+.github:hover,
 .demo:hover {
   background-color: white;
   border: 2px solid white;
@@ -145,4 +138,59 @@ h3 {
   font-size: 15px;
   cursor: pointer;
   width: 100px;
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+  .projHeader {
+    width: 500px;
+    height: auto;
+    margin-top: 100px;
+  }
+
+  .projHeaderIntro {
+    font-size: 60px;
+  }
+
+  .introParaProj {
+    font-size: 20px;
+  }
+
+  .projectContainer {
+    width: 100%;
+    padding: 1em;
+    grid-template-columns: 1fr;
+  }
+
+  figure {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .projHeader {
+    width: 300px;
+    height: auto;
+  }
+
+  .projHeaderIntro {
+    font-size: 40px;
+  }
+
+  .introParaProj {
+    font-size: 15px;
+  }
+
+  .projectContainer {
+    width: 100%;
+    padding: 1em;
+    grid-template-columns: 1fr;
+  }
+
+  figure {
+    float: none;
+    margin: 0 auto;
+  }
 }

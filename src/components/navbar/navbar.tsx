@@ -13,7 +13,9 @@ export interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(styles.root, className)}>
+            <Link to={"/"}>
             <h1 className={styles.logoSpan}>PMCM</h1>
+            </Link>
             <div className={styles.menu}>
                 <Link to={"/"}>
                 <h1 className={styles.menuItems}>HOME</h1>

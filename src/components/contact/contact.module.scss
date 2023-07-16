@@ -1,11 +1,13 @@
 .root {
   background-color: rgb(0, 0, 0);
 }
+
 .body {
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: row;
 }
+
 .left {
   width: 50%;
   height: 800px;
@@ -15,6 +17,7 @@
   position: relative;
   top: 60px;
 }
+
 .right {
   width: 50%;
   height: 800px;
@@ -26,6 +29,7 @@
   margin-left: 100px;
   padding-left: 0px;
 }
+
 .headerCont {
   color: white;
   text-align: end;
@@ -35,28 +39,32 @@
   align-items: end;
   position: relative;
 }
+
 .ptag {
   color: white;
   text-align: end;
   font-size: 20px;
   font-weight: 400;
 }
+
 .name {
   width: 500px;
   height: 30px;
 }
+
 .email {
   height: 30px;
   width: 500px;
 }
+
 .message {
   width: 500px;
   height: 300px;
 }
+
 .sendBtn {
   width: 100px;
   height: 40px;
-
   background-color: rgba(255, 255, 255, 0);
   border: 2px solid white;
   color: white;
@@ -68,7 +76,6 @@
 .sendBtn:hover {
   width: 100px;
   height: 40px;
-
   background-color: white;
   border: 2px solid white;
   color: black;
@@ -77,41 +84,25 @@
   cursor: pointer;
 }
 
-
-
 .icons {
   display: flex;
   flex-direction: row;
   width: 200px;
   height: 50px;
-
   position: relative;
   top: 25px;
 }
+
 .connect {
   color: white;
   font-size: 35px;
   position: relative;
   top: 20px;
 }
-.githubic {
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-.fbic {
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-.igic {
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
+
+.githubic,
+.fbic,
+.igic,
 .linic {
   color: white;
   font-size: 50px;
@@ -119,16 +110,74 @@
   transition: all 0.2s ease-in-out;
 }
 
-.githubic:hover {
-  transform: scale(1.2);
-}
-
-.fbic:hover {
-  transform: scale(1.2);
-}
-.igic:hover {
-  transform: scale(1.2);
-}
+.githubic:hover,
+.fbic:hover,
+.igic:hover,
 .linic:hover {
   transform: scale(1.2);
 }
+
+.toastContainer {
+  background-color: black;
+}
+
+.toast {
+  border: 1px solid white;
+  background-color: black;
+}
+
+.toastBody {
+  color: white;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  /* For screens smaller than 768px */
+  .body {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .left {
+    top: 0;
+  }
+
+  .headerCont {
+    align-items: center;
+    text-align: center;
+    font-size: 60px;
+  }
+
+  .ptag {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .name,
+  .email,
+  .message {
+    width: 100%;
+  }
+
+  .icons {
+    justify-content: center;
+    top: 0;
+  }
+
+  .connect {
+    text-align: center;
+    font-size: 25px;
+    top: 0;
+  }
+}
+

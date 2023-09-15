@@ -90,8 +90,8 @@ $color-light-gray: #eaece5;
 .text {
   font-size: 8em;
   position: relative;
-  text-transform: full-width;
   display: flex;
+  z-index: 1;
 }
 
 .letter {

@@ -1,5 +1,5 @@
 .root {
-  background-color: black;
+  background-color: #141414;
 }
 
 .body {
@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  background-color: black;
+  background-color: #141414;
 }
 
 .projHeader {
@@ -18,6 +18,7 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-top: 100px;
 }
 
 .projHeaderIntro {
@@ -48,7 +49,7 @@
 
 figure {
   color: white;
-  background-color: black;
+  background-color: #141414;
   float: left;
   -webkit-transform: perspective(500);
   -webkit-transform-style: preserve-3d;
@@ -78,7 +79,7 @@ figure:hover img {
 }
 
 figcaption {
-  background-color: black;
+  background-color: #141414;
   border: solid 3px white;
   color: white;
   -webkit-transform: rotateX(-100deg);
@@ -173,14 +174,17 @@ h3 {
   .projHeader {
     width: 300px;
     height: auto;
+    margin-top: 120px;
   }
 
   .projHeaderIntro {
-    font-size: 40px;
+    font-size: 35px;
+    padding-bottom: 30px;
   }
 
   .introParaProj {
     font-size: 15px;
+    padding-bottom: 30px;
   }
 
   .projectContainer {

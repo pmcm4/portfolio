@@ -74,7 +74,7 @@ export const Contact = ({ className }: ContactProps) => {
                         <InstagramIcon className={styles.igic} sx={{fontSize: "50px"}}/>
                         </Link>
 
-                        <Link to={"https://www.linkedin.com/in/paolo-morato-2a80b9146/"} target="_blank">
+                        <Link to={"https://www.linkedin.com/in/paolo-miguel-morato-2a80b9146"} target="_blank">
                         <LinkedInIcon className={styles.linic} sx={{fontSize: "50px"}}/>
                         </Link>
 

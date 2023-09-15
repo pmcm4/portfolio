@@ -1,5 +1,5 @@
 .root {
-  background-color: black;
+  background-color: #141414;
 }
 .body {
   display: flex;
@@ -7,18 +7,16 @@
   align-items: center;
 }
 .top {
-  background-color: rgba(255, 0, 0, 0);
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: justify;
   gap: 30px;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .bottom {
-  background-color: rgba(0, 128, 0, 0);
   width: 100%;
 }
 .AboutHead {
@@ -203,6 +201,7 @@ h1 {
 @media screen and (max-width: 900px) {
   .top {
     width: 90%;
+    margin-top: 130px;
   }
 
   .AboutHead {
@@ -212,6 +211,7 @@ h1 {
   .aboutP {
     width: 100%;
     font-size: 15px;
+    padding: 0 40px 0 40px;
   }
 
   .timeline div {
@@ -224,6 +224,10 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+  .container h1{
+    font-size: 30px;
+  }
+
   .intro {
     padding: 100px 0;
   }
@@ -236,6 +240,7 @@ h1 {
   .aboutP {
     width: 100%;
     font-size: 12px;
+    padding: 0 10px 0 10px;
   }
 
   .timeline ul li {
@@ -243,7 +248,7 @@ h1 {
   }
 
   .timeline li div {
-    width: calc(100vw - 70px);
+    width: calc(100vw - 85px);
   }
 
   .timeline li:nth-child(even) div {

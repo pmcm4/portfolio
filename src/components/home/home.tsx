@@ -63,11 +63,11 @@ export const Home = ({ className }: HomeProps) => {
                         <div className={styles.typingtext}></div>
                     </div>
                     <div className={styles.right}>
-                        <video
-                            src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694855412/transparent-gif-wifflegif_ee80ma_v9bi93.mp4"
-                            loop
-                            autoPlay
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694854078/ezgif-4-132e7d0b09_z1watr.webm"
+                            alt="frontpage gif"
                             className={styles.homeImage}
+                            loading="lazy" // Enable lazy loading for the image
                         />
                     </div>
                 </div>

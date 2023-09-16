@@ -66,6 +66,8 @@ export const Home = ({ className }: HomeProps) => {
                     <div className={styles.right}>
                         <video
                             src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694854078/ezgif-4-132e7d0b09_z1watr.webm"
+                            autoPlay
+                            loop
                             className={styles.homeImage}
                         />
                     </div>

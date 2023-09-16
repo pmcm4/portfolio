@@ -63,12 +63,11 @@ export const Home = ({ className }: HomeProps) => {
                         <div className={styles.typingtext}></div>
                     </div>
                     <div className={styles.right}>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694854078/ezgif-4-132e7d0b09_z1watr.webm"
-                            alt="frontpage gif"
-                            className={styles.homeImage}
-                            loading="lazy" // Enable lazy loading for the image
-                        />
+                    <video className={styles.homeImage} autoPlay>
+                    <source src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694854078/ezgif-4-132e7d0b09_z1watr.webm" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                    </video>
+
                     </div>
                 </div>
                 <div className={styles.timeline}>

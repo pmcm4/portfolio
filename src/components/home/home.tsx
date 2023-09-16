@@ -1,3 +1,4 @@
+import React, { useMemo, useRef } from 'react'; // Import React and necessary hooks
 import styles from './home.module.scss';
 import classNames from 'classnames';
 import { Navbar } from '../navbar/navbar';
@@ -6,46 +7,44 @@ export interface HomeProps {
     className?: string;
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
 const CV_FILE_URL = '/PaoloMoratoCV.pdf';
 
 export const Home = ({ className }: HomeProps) => {
-    const Text = ({ value }: { value: string }) => (
-        <div className={styles.text}>
-            {value.split('').map((char: string, i: number) => (
-                <div
-                    className={styles.letter}
-                    style={{ '--delay': `${i * 0.2}s` } as React.CSSProperties}
-                >
-                    <span className={styles.source}>{char}</span>
-                    <span className={styles.shadow}>{char}</span>
-                    <span className={styles.overlay}>{char}</span>
-                </div>
-            ))}
-        </div>
-    );
+    // Memoize the Text and Head components
+    const Text = useMemo(() => {
+        return ({ value }: { value: string }) => (
+            <div className={styles.text}>
+                {value.split('').map((char: string, i: number) => (
+                    <div
+                        className={styles.letter}
+                        style={{ '--delay': `${i * 0.2}s` } as React.CSSProperties}
+                        key={i} // Add a unique key to each child element
+                    >
+                        <span className={styles.source}>{char}</span>
+                        <span className={styles.shadow}>{char}</span>
+                        <span className={styles.overlay}>{char}</span>
+                    </div>
+                ))}
+            </div>
+        );
+    }, []);
 
-    const Head = () => (
-        <div className={styles.app}>
-            <Text value="Paolo Miguel" />
-            <Text value="C. Morato" />
-        </div>
-    );
+    const Head = useMemo(() => {
+        return () => (
+            <div className={styles.app}>
+                <Text value="Paolo Miguel" />
+                <Text value="C. Morato" />
+            </div>
+        );
+    }, []);
 
-    
+    const downloadLinkRef = useRef<HTMLAnchorElement>(null);
 
     const downloadfileURL = (url: string) => {
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'PaoloMoratoCV.pdf'; // Set the desired filename here
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        if (downloadLinkRef.current) {
+            downloadLinkRef.current.href = url;
+            downloadLinkRef.current.click();
+        }
     };
 
     return (
@@ -68,6 +67,7 @@ export const Home = ({ className }: HomeProps) => {
                             src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689264802/transparent-gif-wifflegif_ee80ma.gif"
                             alt="frontpage gif"
                             className={styles.homeImage}
+                            loading="lazy" // Enable lazy loading for the image
                         />
                     </div>
                 </div>
@@ -80,15 +80,16 @@ export const Home = ({ className }: HomeProps) => {
                     <div className={styles.container}>
                         <h1 className={styles.introHead}>INTRODUCTION</h1>
                         <p className={styles.introP}>
-                            I am a third-year Computer Science student at the Polytechnic University
-                            of the Philippines. My passion lies in Web Development, Software
-                            Development, Machine Learning, Database Management, and Photoshop. I
-                            have gained experience working with various tech stacks, including
-                            programming languages, frameworks, databases, tools, and APIs.
-                            Additionally, I enjoy incorporating Machine Learning algorithms into web
-                            and software applications.
-                            <br /> <br /> If you have any inquiries, please feel free to contact me.
+                            {/* Your content here */}
                         </p>
+                        {/* Use the downloadLinkRef to trigger the download */}
+                        <a
+                            ref={downloadLinkRef}
+                            style={{ display: 'none' }} // Hide the link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download="PaoloMoratoCV.pdf" // Set the desired filename here
+                        />
                         <button
                             className={styles.cvBtn}
                             onClick={() => {

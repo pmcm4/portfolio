@@ -80,7 +80,14 @@ export const Home = ({ className }: HomeProps) => {
                     <div className={styles.container}>
                         <h1 className={styles.introHead}>INTRODUCTION</h1>
                         <p className={styles.introP}>
-                            {/* Your content here */}
+                        I am a third-year Computer Science student at the Polytechnic University
+                            of the Philippines. My passion lies in Web Development, Software
+                            Development, Machine Learning, Database Management, and Photoshop. I
+                            have gained experience working with various tech stacks, including
+                            programming languages, frameworks, databases, tools, and APIs.
+                            Additionally, I enjoy incorporating Machine Learning algorithms into web
+                            and software applications.
+                            <br /> <br /> If you have any inquiries, please feel free to contact me.
                         </p>
                         {/* Use the downloadLinkRef to trigger the download */}
                         <a

@@ -64,10 +64,9 @@ export const Home = ({ className }: HomeProps) => {
                         <div className={styles.typingtext}></div>
                     </div>
                     <div className={styles.right}>
-                        <video
-                            src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694854078/ezgif-4-132e7d0b09_z1watr.webm"
-                            autoPlay
-                            loop
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689264802/transparent-gif-wifflegif_ee80ma.gif"
+                            alt="frontpage gif"
                             className={styles.homeImage}
                         />
                     </div>

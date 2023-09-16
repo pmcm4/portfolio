@@ -11,7 +11,32 @@ const CV_FILE_URL = '/PaoloMoratoCV.pdf';
 
 export const Home = ({ className }: HomeProps) => {
     // Memoize the Text and Head components
+    const Text = useMemo(() => {
+        return ({ value }: { value: string }) => (
+            <div className={styles.text}>
+                {value.split('').map((char: string, i: number) => (
+                    <div
+                        className={styles.letter}
+                        style={{ '--delay': `${i * 0.2}s` } as React.CSSProperties}
+                        key={i} // Add a unique key to each child element
+                    >
+                        <span className={styles.source}>{char}</span>
+                        <span className={styles.shadow}>{char}</span>
+                        <span className={styles.overlay}>{char}</span>
+                    </div>
+                ))}
+            </div>
+        );
+    }, []);
 
+    const Head = useMemo(() => {
+        return () => (
+            <div className={styles.app}>
+                <Text value="Paolo Miguel" />
+                <Text value="C. Morato" />
+            </div>
+        );
+    }, []);
 
     const downloadLinkRef = useRef<HTMLAnchorElement>(null);
 
@@ -33,16 +58,17 @@ export const Home = ({ className }: HomeProps) => {
                                 Hi! My name is
                                 <br />
                             </span>
-                       
+                            <Head />
                         </h1>
                         <div className={styles.typingtext}></div>
                     </div>
                     <div className={styles.right}>
-                    <video className={styles.homeImage} playsInline autoPlay muted loop>
-                    <source src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694854078/ezgif-4-132e7d0b09_z1watr.webm" type="video/mp4"/>
-                    Your browser does not support the video tag.
-                    </video>
-
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689264802/transparent-gif-wifflegif_ee80ma.gif"
+                            alt="frontpage gif"
+                            className={styles.homeImage}
+                            loading="lazy" // Enable lazy loading for the image
+                        />
                     </div>
                 </div>
                 <div className={styles.timeline}>

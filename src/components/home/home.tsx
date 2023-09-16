@@ -63,7 +63,7 @@ export const Home = ({ className }: HomeProps) => {
                         <div className={styles.typingtext}></div>
                     </div>
                     <div className={styles.right}>
-                    <video className={styles.homeImage} autoPlay>
+                    <video className={styles.homeImage} autoPlay loop>
                     <source src="https://res.cloudinary.com/dgb2lnz2i/video/upload/v1694854078/ezgif-4-132e7d0b09_z1watr.webm" type="video/mp4"/>
                     Your browser does not support the video tag.
                     </video>

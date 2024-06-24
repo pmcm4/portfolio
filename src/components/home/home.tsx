@@ -7,7 +7,7 @@ export interface HomeProps {
     className?: string;
 }
 
-const CV_FILE_URL = '/PaoloMoratoCV.pdf';
+const CV_FILE_URL = '/PaoloMoratoCV2024.pdf';
 
 export const Home = ({ className }: HomeProps) => {
     // Memoize the Text and Head components

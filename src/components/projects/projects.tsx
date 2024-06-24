@@ -29,6 +29,28 @@ export const Projects = ({ className }: ProjectsProps) => {
                             alt="Portfolio Item"
                         />
                         <figcaption>
+                            <h3>Barangay Management and Request System (BMRS)</h3>
+                            <p className={styles.figdesc}>
+                                Developed a PERN stack web application for residents to request
+                                barangay certificates and IDs.
+                            </p>
+                            <div className={styles.buttons}>
+                                <Link to={'https://github.com/pmcm4/admin'} target="_blank">
+                                    <button className={styles.github}>GitHub</button>
+                                </Link>
+
+                                <Link to={'https://pmcm-dev.xyz/'} target="_blank">
+                                    <button className={styles.demo}>Demo</button>
+                                </Link>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689410349/unileather_w8lgse.png"
+                            alt="Portfolio Item"
+                        />
+                        <figcaption>
                             <h3>UNILEATHER</h3>
                             <p className={styles.figdesc}>
                                 E-Commerce website about leather shoes made locally and
@@ -36,12 +58,12 @@ export const Projects = ({ className }: ProjectsProps) => {
                                 Paypal payment system.
                             </p>
                             <div className={styles.buttons}>
-                                <Link to={"https://github.com/pmcm4/admin"} target="_blank">
-                                <button className={styles.github}>GitHub</button>
+                                <Link to={'https://github.com/pmcm4/admin'} target="_blank">
+                                    <button className={styles.github}>GitHub</button>
                                 </Link>
 
-                                <Link to={"https://unileather.netlify.app/"} target="_blank">
-                                <button className={styles.demo}>Demo</button>
+                                <Link to={'https://unileather.netlify.app/'} target="_blank">
+                                    <button className={styles.demo}>Demo</button>
                                 </Link>
                             </div>
                         </figcaption>
@@ -59,9 +81,9 @@ export const Projects = ({ className }: ProjectsProps) => {
                                 model for links classification.
                             </p>
                             <div className={styles.buttons}>
-                            <Link to={"https://github.com/pmcm4/LinkAlert"} target="_blank">
-                                <button className={styles.github}>GitHub</button>
-                            </Link>
+                                <Link to={'https://github.com/pmcm4/LinkAlert'} target="_blank">
+                                    <button className={styles.github}>GitHub</button>
+                                </Link>
                             </div>
                         </figcaption>
                     </figure>
@@ -79,14 +101,16 @@ export const Projects = ({ className }: ProjectsProps) => {
                                 for classifcation.
                             </p>
                             <div className={styles.buttons}>
-                            <Link to={"https://github.com/pmcm4/fpr-senti"} target="_blank">
-                                <button className={styles.github}>GitHub</button>
+                                <Link to={'https://github.com/pmcm4/fpr-senti'} target="_blank">
+                                    <button className={styles.github}>GitHub</button>
                                 </Link>
 
-                            <Link to={"https://fpr-senti-9a308e70bbf6.herokuapp.com/"} target="_blank">
-                                <button className={styles.demo}>Demo</button>
+                                <Link
+                                    to={'https://fpr-senti-9a308e70bbf6.herokuapp.com/'}
+                                    target="_blank"
+                                >
+                                    <button className={styles.demo}>Demo</button>
                                 </Link>
-
                             </div>
                         </figcaption>
                     </figure>
@@ -104,8 +128,8 @@ export const Projects = ({ className }: ProjectsProps) => {
                                 to predict whether a link is malicious or benign.
                             </p>
                             <div className={styles.buttons}>
-                            <Link to={"https://github.com/pmcm4/nb_api"} target="_blank">
-                                <button className={styles.github}>GitHub</button>
+                                <Link to={'https://github.com/pmcm4/nb_api'} target="_blank">
+                                    <button className={styles.github}>GitHub</button>
                                 </Link>
                             </div>
                         </figcaption>
@@ -124,27 +148,8 @@ export const Projects = ({ className }: ProjectsProps) => {
                                 retrieval and management.
                             </p>
                             <div className={styles.buttons}>
-                            <Link to={"https://github.com/pmcm4/iPhoon"} target="_blank">
-                                <button className={styles.github}>GitHub</button>
-                                </Link>
-                            </div>
-                        </figcaption>
-                    </figure>
-
-                    <figure>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689412673/pdms_ja0tbo.png"
-                            alt="Portfolio Item"
-                        />
-                        <figcaption>
-                            <h3>PDMS</h3>
-                            <p className={styles.figdesc}>
-                                A simple product management system with expiration dates developed
-                                in Java that utilizes an Apache Derby SQL database.
-                            </p>
-                            <div className={styles.buttons}>
-                            <Link to={"https://github.com/pmcm4/PDMS"} target="_blank">
-                                <button className={styles.github}>GitHub</button>
+                                <Link to={'https://github.com/pmcm4/iPhoon'} target="_blank">
+                                    <button className={styles.github}>GitHub</button>
                                 </Link>
                             </div>
                         </figcaption>

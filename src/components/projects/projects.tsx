@@ -15,145 +15,112 @@ export const Projects = ({ className }: ProjectsProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Navbar />
+            <ul className={styles['circles']}>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
             <div className={styles.body}>
                 <div className={styles.projHeader}>
                     <h1 className={styles.projHeaderIntro}>My Projects</h1>
                     <p className={styles.introParaProj}>
-                        Here are some of the projects I&apos;ve worked on our university.{' '}
+                        Here are some of the projects I&apos;ve worked on our university.
                     </p>
                 </div>
                 <div className={styles.projectContainer}>
-                    <figure>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689410349/unileather_w8lgse.png"
-                            alt="Portfolio Item"
-                        />
-                        <figcaption>
-                            <h3>Barangay Management and Request System (BMRS)</h3>
-                            <p className={styles.figdesc}>
-                                Developed a PERN stack web application for residents to request
-                                barangay certificates and IDs.
-                            </p>
-                            <div className={styles.buttons}>
-                                <Link to={'https://github.com/pmcm4/admin'} target="_blank">
-                                    <button className={styles.github}>GitHub</button>
-                                </Link>
+                    <div className={styles['box-container']}>
+                        <span className={styles['project-title']}>
+                            Barangay Request Management System
+                        </span>
+                        <span className={styles['project-desc']}>
+                            Developed a PERN stack web application for residents to request barangay
+                            certificates and IDs.{' '}
+                            <strong>Client: Barangay San Roque Marikina City</strong>
+                        </span>
+                        <div className={styles['project-btn']}>
+                            <Link to={'https://github.com/pmcm4/brgy'} target="__blank">
+                                <button>GitHub</button>
+                            </Link>
+                            <Link to={'https://www.pmcm-dev.xyz/home'} target="__blank">
+                                <button>Demo</button>
+                            </Link>
+                        </div>
+                    </div>
 
-                                <Link to={'https://pmcm-dev.xyz/'} target="_blank">
-                                    <button className={styles.demo}>Demo</button>
-                                </Link>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689410349/unileather_w8lgse.png"
-                            alt="Portfolio Item"
-                        />
-                        <figcaption>
-                            <h3>UNILEATHER</h3>
-                            <p className={styles.figdesc}>
-                                E-Commerce website about leather shoes made locally and
-                                internationally developed using MERN framework with Stripe and
-                                Paypal payment system.
-                            </p>
-                            <div className={styles.buttons}>
-                                <Link to={'https://github.com/pmcm4/admin'} target="_blank">
-                                    <button className={styles.github}>GitHub</button>
-                                </Link>
-
-                                <Link to={'https://unileather.netlify.app/'} target="_blank">
-                                    <button className={styles.demo}>Demo</button>
-                                </Link>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689410518/linkalert_tx4v2v.png"
-                            alt="Portfolio Item"
-                        />
-                        <figcaption>
-                            <h3>LINKALERT</h3>
-                            <p className={styles.figdesc}>
-                                An Android SMS application that detects malicious links in an SMS
-                                messages. Developed in Android Studio and uses machine learning
-                                model for links classification.
-                            </p>
-                            <div className={styles.buttons}>
-                                <Link to={'https://github.com/pmcm4/LinkAlert'} target="_blank">
-                                    <button className={styles.github}>GitHub</button>
-                                </Link>
-                            </div>
-                        </figcaption>
-                    </figure>
-
-                    <figure>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689412090/fpr_senti_nhuffv.png"
-                            alt="Portfolio Item"
-                        />
-                        <figcaption>
-                            <h3>FPR SENTI</h3>
-                            <p className={styles.figdesc}>
-                                A web-based sentiment analysis tool that classifies product reviews
-                                in tagalog. Developed using Flask and uses a machine learning model
-                                for classifcation.
-                            </p>
-                            <div className={styles.buttons}>
-                                <Link to={'https://github.com/pmcm4/fpr-senti'} target="_blank">
-                                    <button className={styles.github}>GitHub</button>
-                                </Link>
-
-                                <Link
-                                    to={'https://fpr-senti-9a308e70bbf6.herokuapp.com/'}
-                                    target="_blank"
-                                >
-                                    <button className={styles.demo}>Demo</button>
-                                </Link>
-                            </div>
-                        </figcaption>
-                    </figure>
-
-                    <figure>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689413365/nb_api_hkosnw.png"
-                            alt="Portfolio Item"
-                        />
-                        <figcaption>
-                            <h3>NB API</h3>
-                            <p className={styles.figdesc}>
-                                {' '}
-                                A Naive Bayes algorithm API classifier trained on a dataset of links
-                                to predict whether a link is malicious or benign.
-                            </p>
-                            <div className={styles.buttons}>
-                                <Link to={'https://github.com/pmcm4/nb_api'} target="_blank">
-                                    <button className={styles.github}>GitHub</button>
-                                </Link>
-                            </div>
-                        </figcaption>
-                    </figure>
-
-                    <figure>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689412355/iphoonasdfasdf_j6n4xz.png"
-                            alt="Portfolio Item"
-                        />
-                        <figcaption>
-                            <h3>iPHOON</h3>
-                            <p className={styles.figdesc}>
-                                A Java-based Typhoon Information Management System covering typhoons
-                                from year 2000-2022, with efficient database queries for data
-                                retrieval and management.
-                            </p>
-                            <div className={styles.buttons}>
-                                <Link to={'https://github.com/pmcm4/iPhoon'} target="_blank">
-                                    <button className={styles.github}>GitHub</button>
-                                </Link>
-                            </div>
-                        </figcaption>
-                    </figure>
+                    <div className={styles['box-container']}>
+                        <span className={styles['project-title']}>UniLeather</span>
+                        <span className={styles['project-desc']}>
+                            Developed a MERN Stack web application with Stripe and PayPal payment
+                            systems.
+                        </span>
+                        <div className={styles['project-btn']}>
+                            <Link
+                                to={'https://github.com/pmcm4/unileather-client-side'}
+                                target="__blank"
+                            >
+                                <button>GitHub</button>
+                            </Link>
+                            <Link to={'https://unileather.netlify.app/'} target="__blank">
+                                <button>Demo</button>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className={styles['box-container']}>
+                        <span className={styles['project-title']}>RiverCast</span>
+                        <span className={styles['project-desc']}>
+                            Developed a system predicting the water level of the Marikina River
+                            using a deep learning model. Secured 2nd place in a research
+                            competition.
+                        </span>
+                        <div className={styles['project-btn']}>
+                            <Link
+                                to={'https://github.com/pmcm4/rivercast-tool-UI'}
+                                target="__blank"
+                            >
+                                <button>GitHub</button>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className={styles['box-container']}>
+                        <span className={styles['project-title']}>M-SMS</span>
+                        <span className={styles['project-desc']}>
+                            An SMS app uses SMSRetriever API to read messages, extract URLs, and
+                            classify them using a Kaggle dataset with Jaro-Winkler (90% threshold)
+                            and a Finite State Machine for multiple URLs.
+                        </span>
+                        <div className={styles['project-btn']}>
+                            <Link
+                                to={'https://github.com/pmcm4/malicious-SMS-detector-FSM'}
+                                target="__blank"
+                            >
+                                <button>GitHub</button>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className={styles['box-container']}>
+                        <span className={styles['project-title']}>
+                            Web Based Sentiment Analysis
+                        </span>
+                        <span className={styles['project-desc']}>
+                            A Python-based Naive Bayes sentiment analysis model for Tagalog product
+                            reviews, integrated with a React.js interface.
+                        </span>
+                        <div className={styles['project-btn']}>
+                            <Link
+                                to={'https://github.com/pmcm4/sentiment_analysis'}
+                                target="__blank"
+                            >
+                                <button>GitHub</button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

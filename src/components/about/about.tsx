@@ -14,21 +14,40 @@ export const About = ({ className }: AboutProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Navbar />
+            <ul className={styles['circles']}>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
             <div className={styles.body}>
                 <div className={styles.top}>
                     <h1 className={styles.AboutHead}>About me</h1>
                     <span className={styles.aboutP}>
-                        Hey there! I'm Paolo Miguel C. Morato, and I live in Marikina City.
-                        Currently, I'm studying Computer Science at the Polytechnic University of
-                        the Philippines.
+                        Hey there! I'm Paolo Miguel C. Morato, and I live in Marikina City. I
+                        studied Computer Science at the Polytechnic University of the Philippines.
                         <br />
-                        <br /> My passion for computers started at a young age, just like any other
-                        kid who loves playing computer games. But what really got me hooked was my
-                        curiosity about how things actually work inside a computer.
                         <br />
-                        <br /> Besides coding and gaming, I'm also a big fan of watching movies and
-                        TV series. It's a great way for me to relax and get inspired. If you have
-                        any questions or just want to chat, feel free to reach out to me.
+                        I am an aspiring web developer with a robust foundation in computer science,
+                        focusing on web development, software development, and database management.
+                        My academic journey reflects a commitment to excellence, consistently
+                        earning the distinction of President's and Dean's Lister.
+                        <br />
+                        <br />
+                        I am passionate about crafting innovative and user-friendly websites and
+                        developing efficient software solutions. Proficient in a variety of
+                        programming languages and tools, I am eager to contribute my skills and grow
+                        within a dynamic team environment.
+                        <br />
+                        <br />
+                        If you have any questions or just want to chat, feel free to reach out to
+                        me.
                     </span>
                 </div>
                 <div className={styles.bottom}>

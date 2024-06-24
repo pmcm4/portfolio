@@ -50,6 +50,7 @@ export const Home = ({ className }: HomeProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Navbar />
+
             <div className={styles.body}>
                 <div className={styles.topdiv}>
                     <div className={styles.left}>
@@ -65,12 +66,12 @@ export const Home = ({ className }: HomeProps) => {
                 </div>
                 <div className={styles.timeline}>
                     <h1>
-                        My Introduction <span className={styles.arrow}>&#8595;</span>
+                        Scroll Down! <span className={styles.arrow}>&#8595;</span>
                     </h1>
                 </div>
                 <div className={styles.botdiv}>
                     <div className={styles.container}>
-                        <h1 className={styles.introHead}>INTRODUCTION</h1>
+                        <h1 className={styles.introHead}>Quick Introduction</h1>
                         <p className={styles.introP}>
                             I am a Computer Science student at the Polytechnic University of the
                             Philippines. My passion lies in Web Development, Software Development,
@@ -98,6 +99,18 @@ export const Home = ({ className }: HomeProps) => {
                     </div>
                 </div>
             </div>
+            <ul className={styles['circles']}>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     );
 };

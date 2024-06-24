@@ -62,14 +62,6 @@ export const Home = ({ className }: HomeProps) => {
                         </h1>
                         <div className={styles.typingtext}></div>
                     </div>
-                    <div className={styles.right}>
-                        <img
-                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689264802/transparent-gif-wifflegif_ee80ma.gif"
-                            alt="frontpage gif"
-                            className={styles.homeImage}
-                            loading="lazy" // Enable lazy loading for the image
-                        />
-                    </div>
                 </div>
                 <div className={styles.timeline}>
                     <h1>

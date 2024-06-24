@@ -174,7 +174,7 @@ $color-light-gray: #cccccc;
   }
 }
 
-$strings: ('Computer Science Student' 'Aspiring Developer' 'Passionate Learner');
+$strings: ('Aspiring Developer' 'Passionate Learner');
 
 $durCharFwd: 0.1; // character typed
 $durFullGap: 2; // time between typed/delete
@@ -267,9 +267,10 @@ $currentPercentage: 0;
 }
 
 .topdiv {
-  display: flex;
-  flex-direction: row;
-  height: 800px;
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    align-items: center;
 }
 
 .botdiv {

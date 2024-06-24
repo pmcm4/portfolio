@@ -24,7 +24,10 @@ export const Projects = ({ className }: ProjectsProps) => {
                 </div>
                 <div className={styles.projectContainer}>
                     <figure>
-                        <h1>BMRS</h1>
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689410349/unileather_w8lgse.png"
+                            alt="Portfolio Item"
+                        />
                         <figcaption>
                             <h3>Barangay Management and Request System (BMRS)</h3>
                             <p className={styles.figdesc}>
@@ -43,7 +46,10 @@ export const Projects = ({ className }: ProjectsProps) => {
                         </figcaption>
                     </figure>
                     <figure>
-                        <h1>UNILEATHER</h1>
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689410349/unileather_w8lgse.png"
+                            alt="Portfolio Item"
+                        />
                         <figcaption>
                             <h3>UNILEATHER</h3>
                             <p className={styles.figdesc}>
@@ -63,7 +69,10 @@ export const Projects = ({ className }: ProjectsProps) => {
                         </figcaption>
                     </figure>
                     <figure>
-                        <h1>LINKALERT</h1>
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689410518/linkalert_tx4v2v.png"
+                            alt="Portfolio Item"
+                        />
                         <figcaption>
                             <h3>LINKALERT</h3>
                             <p className={styles.figdesc}>
@@ -80,7 +89,10 @@ export const Projects = ({ className }: ProjectsProps) => {
                     </figure>
 
                     <figure>
-                        <h1>FPR SENTI</h1>
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689412090/fpr_senti_nhuffv.png"
+                            alt="Portfolio Item"
+                        />
                         <figcaption>
                             <h3>FPR SENTI</h3>
                             <p className={styles.figdesc}>
@@ -104,7 +116,10 @@ export const Projects = ({ className }: ProjectsProps) => {
                     </figure>
 
                     <figure>
-                        <h1>NB API</h1>
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689413365/nb_api_hkosnw.png"
+                            alt="Portfolio Item"
+                        />
                         <figcaption>
                             <h3>NB API</h3>
                             <p className={styles.figdesc}>
@@ -121,7 +136,10 @@ export const Projects = ({ className }: ProjectsProps) => {
                     </figure>
 
                     <figure>
-                        <h1>iPHOON</h1>
+                        <img
+                            src="https://res.cloudinary.com/dgb2lnz2i/image/upload/v1689412355/iphoonasdfasdf_j6n4xz.png"
+                            alt="Portfolio Item"
+                        />
                         <figcaption>
                             <h3>iPHOON</h3>
                             <p className={styles.figdesc}>

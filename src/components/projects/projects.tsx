@@ -31,7 +31,8 @@ export const Projects = ({ className }: ProjectsProps) => {
                 <div className={styles.projHeader}>
                     <h1 className={styles.projHeaderIntro}>My Projects</h1>
                     <p className={styles.introParaProj}>
-                        Here are some of the projects I&apos;ve worked on our university.
+                        Here are some of the projects I've worked on, both within my university and
+                        with external clients.
                     </p>
                 </div>
                 <div className={styles.projectContainer}>
@@ -73,7 +74,7 @@ export const Projects = ({ className }: ProjectsProps) => {
                         </div>
                     </div>
                     <div className={styles['box-container']}>
-                        <span className={styles['project-title']}>RiverCast</span>
+                        <span className={styles['project-title']}>Thesis: RiverCast</span>
                         <span className={styles['project-desc']}>
                             Developed a system predicting the water level of the Marikina River
                             using a deep learning model. Secured 2nd place in a research

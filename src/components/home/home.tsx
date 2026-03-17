@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react'; // Import React and necessary hooks
+import React, { useMemo } from 'react';
 import styles from './home.module.scss';
 import classNames from 'classnames';
 import { Navbar } from '../navbar/navbar';
@@ -7,7 +7,7 @@ export interface HomeProps {
     className?: string;
 }
 
-const CV_FILE_URL = '/PaoloMoratoCV2024.pdf';
+const CV_FILE_URL = '/Morato%20-%20Resume%202026.pdf';
 
 export const Home = ({ className }: HomeProps) => {
     // Memoize the Text and Head components
@@ -36,15 +36,15 @@ export const Home = ({ className }: HomeProps) => {
                 <Text value="C. Morato" />
             </div>
         );
-    }, []);
-
-    const downloadLinkRef = useRef<HTMLAnchorElement>(null);
+    }, [Text]);
 
     const downloadfileURL = (url: string) => {
-        if (downloadLinkRef.current) {
-            downloadLinkRef.current.href = url;
-            downloadLinkRef.current.click();
-        }
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'Morato-Resume-2026.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
@@ -73,21 +73,17 @@ export const Home = ({ className }: HomeProps) => {
                     <div className={styles.container}>
                         <h1 className={styles.introHead}>Quick Introduction</h1>
                         <p className={styles.introP}>
-                            I am an upcoming Computer Science graduate from the Polytechnic
-                            University of the Philippines with a passion for Web Development,
-                            Software Development, Database Management, and Graphic Design using
-                            Adobe Photoshop. I have experience working with various tech stacks,
-                            including programming languages, frameworks, databases, tools, and APIs.
-                            <br /> <br /> If you have any inquiries, please feel free to contact me.
+                            I am a DocOps Engineer at ITRS Phils Inc. with hands-on experience in
+                            AI automation, documentation platforms, and CI/CD workflows. I graduated
+                            with a Bachelor of Science in Computer Science from the Polytechnic
+                            University of the Philippines as Cum Laude.
+                            <br /> <br />
+                            I build scalable web and automation solutions using JavaScript,
+                            TypeScript, Python, React, Node.js, Docker, and Jenkins, while focusing
+                            on performance, developer productivity, and user experience.
+                            <br /> <br />
+                            If you have any inquiries, please feel free to contact me.
                         </p>
-                        {/* Use the downloadLinkRef to trigger the download */}
-                        <a
-                            ref={downloadLinkRef}
-                            style={{ display: 'none' }} // Hide the link
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            download="PaoloMoratoCV.pdf" // Set the desired filename here
-                        />
                         <button
                             className={styles.cvBtn}
                             onClick={() => {

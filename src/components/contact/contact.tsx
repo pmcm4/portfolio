@@ -14,11 +14,6 @@ import 'react-toastify/dist/ReactToastify.css';
 export interface ContactProps {
     className?: string;
 }
-
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
 export const Contact = ({ className }: ContactProps) => {
     const form = useRef<HTMLFormElement>(null);
 
@@ -27,7 +22,7 @@ export const Contact = ({ className }: ContactProps) => {
 
         if (form.current) {
             emailjs
-                .sendForm('service_abnh56n', 'template_55f8o2v', form.current, '5_XL6n53Jvn1oHMaP')
+                .sendForm('service_abnh56n', 'template_b814afd', form.current, '5_XL6n53Jvn1oHMaP')
                 .then(
                     (result) => {
                         console.log(result.text);
@@ -64,8 +59,10 @@ export const Contact = ({ className }: ContactProps) => {
                     <h1 className={styles.headerCont}>
                         CONTACT <br /> ME
                         <p className={styles.ptag}>
-                            <br /> Marikina City
+                            <br /> 174 Shoe Ave., San Roque, Marikina City
                             <br /> pmorato187@gmail.com
+                            <br /> +63 976 372 5142
+                            <br /> portfolio.pmcm-dev.xyz
                             <br /> <br />
                         </p>
                     </h1>
@@ -83,7 +80,7 @@ export const Contact = ({ className }: ContactProps) => {
                         </Link>
 
                         <Link
-                            to={'https://www.linkedin.com/in/paolo-miguel-morato-2a80b9146'}
+                            to={'https://www.linkedin.com/in/paolo-miguel-morato/'}
                             target="_blank"
                         >
                             <LinkedInIcon className={styles.linic} sx={{ fontSize: '50px' }} />

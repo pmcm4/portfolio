@@ -1,15 +1,10 @@
 import styles from './about.module.scss';
 import classNames from 'classnames';
 import { Navbar } from '../navbar/navbar';
-import { useEffect } from 'react';
 
 export interface AboutProps {
     className?: string;
 }
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
 export const About = ({ className }: AboutProps) => {
     return (
         <div className={classNames(styles.root, className)}>
@@ -30,24 +25,23 @@ export const About = ({ className }: AboutProps) => {
                 <div className={styles.top}>
                     <h1 className={styles.AboutHead}>About me</h1>
                     <span className={styles.aboutP}>
-                        Hey there! I'm Paolo Miguel C. Morato, and I live in Marikina City. I
-                        studied Computer Science at the Polytechnic University of the Philippines.
+                        Hey there! I'm Paolo Miguel C. Morato, based in Marikina City.
                         <br />
                         <br />
-                        I am an aspiring web developer with a robust foundation in computer science,
-                        focusing on web development, software development, and database management.
-                        My academic journey reflects a commitment to excellence, consistently
-                        earning the distinction of President's and Dean's Lister.
+                        I currently work as a DocOps Engineer at ITRS Phils Inc., where I build and
+                        improve documentation systems, web features, and AI-powered workflows. I
+                        focus on automation, CI/CD, SEO, and documentation performance to deliver
+                        scalable and reliable experiences.
                         <br />
                         <br />
-                        I am passionate about crafting innovative and user-friendly websites and
-                        developing efficient software solutions. Proficient in a variety of
-                        programming languages and tools, I am eager to contribute my skills and grow
-                        within a dynamic team environment.
+                        I graduated with a Bachelor of Science in Computer Science from the
+                        Polytechnic University of the Philippines. My core stack includes
+                        JavaScript, TypeScript, Python, React, Node.js, Express, PostgreSQL, MySQL,
+                        MongoDB, Docker, Jenkins, and cloud services on GCP and AWS.
                         <br />
                         <br />
-                        If you have any questions or just want to chat, feel free to reach out to
-                        me.
+                        I enjoy building efficient tools and user-focused products, and I am always
+                        open to collaboration.
                     </span>
                 </div>
                 <div className={styles.bottom}>
@@ -62,87 +56,38 @@ export const About = ({ className }: AboutProps) => {
                         <ul>
                             <li>
                                 <div>
-                                    <time>2009</time>
-                                    We had our first family computer, and this was the year I
-                                    started getting hooked on computer games like Facebook games,
-                                    Adobe Flash games, and DOTA. I also began studying Microsoft
-                                    applications such as Word, Excel, and PowerPoint.{' '}
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <time>2015</time>I started to explore Adobe editing tools such
-                                    as Photoshop, Premiere Pro, and Adobe After Effects.
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <time>2018</time>I finished Junior High School and entered AMA
-                                    East Rizal for my Senior High School, where I decided to pursue
-                                    the STEM strand. This was also the year I made the decision to
-                                    pursue a computer-related course in college.{' '}
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <time>2020</time>I finished my senior high school and got
-                                    accepted into Polytechnic University of the Philippines. During
-                                    my freshman year, I didn't really appreciate my programming
-                                    subjects because we mostly worked with the C language and our
-                                    programs only produced command line interface (CLI) outputs.
-                                    However, I later realized that this experience provided a solid
-                                    foundation for the subsequent years.{' '}
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <time>2021</time>I became hooked on Java programming due to
-                                    Swing. I noticed that Swing is quite similar to Photoshop, but
-                                    it allows for the creation of graphical user interfaces (GUIs)
-                                    in Java. This not only led me to appreciate our programming
-                                    subjects but also resulted in my learning software development
-                                    through the projects we worked on that year, which required GUI
-                                    development.{' '}
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <time>2022</time>I began exploring JavaScript, TypeScript, and
-                                    Python. During this year, I delved into web development using
-                                    React frameworks. Additionally, I was introduced to various
-                                    machine learning models that I found both intriguing and useful
-                                    for numerous projects.{' '}
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <time>2023</time>
-                                    During my third year in college, I can confidently say that the
-                                    first semester was the most challenging but also packed with
-                                    valuable lessons. In our Automata subject, which was the
-                                    toughest and most stressful course that semester, I learned how
-                                    to use Android Studio through our required project.
-                                    Additionally, I delved deeper into exploring various machine
-                                    learning models and started incorporating them into my projects.
-                                    <br /> <br />
-                                    I also gained a deeper understanding of how programming
-                                    languages work through our Principles of Programming Language
-                                    subject, where we undertook a compiler project. Currently, I am
-                                    still exploring machine learning models that greatly interest me
-                                    for implementation in web and software projects.
-                                    <br /> <br />
-                                    Lastly, we have commenced our Thesis, which will undoubtedly be
-                                    the greatest challenge of our entire college journey.
+                                    <time>Sep 2024 - Present</time>
+                                    Joined ITRS Phils Inc. as a DocOps Engineer, leading AI-driven
+                                    translation workflows, maintaining documentation systems and websites, improving search indexing accuracy, and enhancing CI/CD pipelines and documentation website performance..
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <time>2024</time>
-                                    We successfully defended our thesis, and it won 2nd place in a
-                                    research competition with a PHP 75,000 reward. I am now
-                                    finishing my final semester and am expected to graduate in
-                                    September 2024. Currently, I am seeking opportunities to start
-                                    my professional career.
+                                    Defended our thesis project RiverCast and secured 2nd place in a
+                                    research competition.
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <time>Aug 2023 - Nov 2023</time>
+                                    Worked as a Full Stack Web Development Intern at iBuild.PH,
+                                    developing and maintaining an eCommerce website for a music
+                                    ministry.
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <time>2020 - 2024</time>
+                                    Finished Bachelor of Science in Computer Science at the
+                                    Polytechnic University of the Philippines and graduated Cum
+                                    Laude.
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <time>2018 - 2020</time>
+                                    Completed Senior High School (STEM) at AMA East Rizal.
                                 </div>
                             </li>
                         </ul>

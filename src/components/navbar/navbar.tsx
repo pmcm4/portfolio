@@ -1,76 +1,53 @@
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.scss';
 import classNames from 'classnames';
-import { StyleSharp } from '@mui/icons-material';
 import { useState } from 'react';
 
 export interface NavbarProps {
     className?: string;
 }
 export const Navbar = ({ className }: NavbarProps) => {
-    
     const [isActive, setIsActive] = useState(false);
 
     const toggleMenu = () => {
-      setIsActive(!isActive);
+        setIsActive(!isActive);
     };
-
-
 
     return (
         <div className={classNames(styles.root, className)}>
-            <Link to={"/"}>
-            <h1 className={styles.logoSpan}>PMCM</h1>
+            <Link to={'/'}>
+                <h1 className={styles.logoSpan}>PMCM</h1>
             </Link>
-           {/* <div className={styles.menu}>
-                <Link to={"/"}>
-                <h1 className={styles.menuItems}>HOME</h1>
-                </Link > 
-                <Link to={"/about"}>
-                <h1 className={styles.menuItems}>ABOUT</h1>
-                </Link > 
-
-                <Link to={"/projects"}>
-                <h1 className={styles.menuItems}>PROJECTS</h1>
-                </Link>
-
-                <Link to={"/contact"}>
-                <h1 className={styles.menuItems}>CONTACT</h1>
-                 </Link> 
-
-            </div>*/}
             <ul className={`${styles.menu} ${isActive ? styles.active : ''}`}>
-                <Link to={"/"}>
-                    <li className={styles.navItems}>
-                        <a className={styles.menuItems}>HOME</a>
-                    </li>
-                </Link>
-
-                <Link to={"/about"}>
                 <li className={styles.navItems}>
-                    <a className={styles.menuItems}>ABOUT</a>
+                    <Link to={'/'} className={styles.menuItems}>
+                        HOME
+                    </Link>
                 </li>
-                </Link>
-
-                <Link to={"/projects"}>
                 <li className={styles.navItems}>
-                    <a className={styles.menuItems}>PROJECTS</a>
+                    <Link to={'/about'} className={styles.menuItems}>
+                        ABOUT
+                    </Link>
                 </li>
-                </Link>
-                
-                <Link to={"/contact"}>
                 <li className={styles.navItems}>
-                    <a className={styles.menuItems}>CONTACT</a>
+                    <Link to={'/projects'} className={styles.menuItems}>
+                        PROJECTS
+                    </Link>
                 </li>
-                </Link>
+                <li className={styles.navItems}>
+                    <Link to={'/contact'} className={styles.menuItems}>
+                        CONTACT
+                    </Link>
+                </li>
             </ul>
-            <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`} onClick={toggleMenu}>
+            <div
+                className={`${styles.hamburger} ${isActive ? styles.active : ''}`}
+                onClick={toggleMenu}
+            >
                 <span className={styles.bar}></span>
                 <span className={styles.bar}></span>
                 <span className={styles.bar}></span>
             </div>
-
-
         </div>
     );
 };

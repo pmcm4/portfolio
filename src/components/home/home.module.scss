@@ -20,7 +20,7 @@ $color-light-gray: #eaece5;
   font-size: 40px;
   align-items: center;
   margin-top: 150px;
-  text-align: start;
+  text-align: left;
 }
 
 .right {
@@ -45,14 +45,14 @@ $color-light-gray: #eaece5;
 .header {
   color: white;
   font-size: 100px;
-  text-align: start;
+  text-align: left;
   width: 700px;
 }
 
 .p1 {
   color: white;
   font-size: 40px;
-  text-align: start;
+  text-align: left;
   width: 700px;
 }
 
@@ -85,7 +85,7 @@ $color-light-gray: #eaece5;
 
 .intro {
   font-size: 40px;
-  text-align: start;
+  text-align: left;
 }
 
 .text {
@@ -258,7 +258,7 @@ $currentPercentage: 0;
   content: '';
   animation: typed 10s linear 2s infinite, beam-blink 2s infinite;
   color: white;
-  text-align: start;
+  text-align: left;
   width: 100%;
   white-space: nowrap;
   overflow: visible;
@@ -280,7 +280,7 @@ $currentPercentage: 0;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .container {
@@ -299,7 +299,7 @@ $currentPercentage: 0;
   font-weight: 700;
   font-size: 80px;
   color: white;
-  text-align: start;
+  text-align: left;
   align-items: center;
   display: flex;
   width: 80%;

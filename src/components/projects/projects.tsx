@@ -32,7 +32,25 @@ export const Projects = ({ className }: ProjectsProps) => {
                 <div className={styles.projectContainer}>
                     <div className={styles['box-container']}>
                         <span className={styles['project-title']}>
-                            Barangay Management and Request System (BMRS)
+                            Pulsecraft
+                        </span>
+                        <span className={styles['project-desc']}>
+                            Built a local AI voice generation studio for reusable voice profiles,
+                            reference audio transcription, and cloned voice clip generation through
+                            a web dashboard connected to a local FastAPI engine. Stack: React,
+                            TypeScript, Vite, FastAPI, Python, SQLAlchemy, SQLite, Qwen TTS,
+                            Whisper.
+                        </span>
+                        <div className={styles['project-btn']}>
+                            <Link to={'https://pulsecraft-studio-client.vercel.app/'} target="__blank">
+                                <button>Demo</button>
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className={styles['box-container']}>
+                        <span className={styles['project-title']}>
+                            Barangay Management and Request System
                         </span>
                         <span className={styles['project-desc']}>
                             Built a PERN stack web application enabling residents to request

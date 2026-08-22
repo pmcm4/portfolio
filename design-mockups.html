@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PMCM Portfolio - Design Mockups</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b0d0f; --ink:#f4f1ea; --muted:#9b9d9a; --line:#292d2e; --accent:#c8f05a; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#111416; color:#f4f1ea; font:14px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; }
+    button { font:inherit; }
+    .shell { max-width:1320px; margin:auto; padding:44px 28px 72px; }
+    .intro { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:28px; }
+    .intro h1 { margin:0; font-size:clamp(28px,4vw,54px); letter-spacing:-.05em; line-height:.95; }
+    .intro p { max-width:390px; color:#9b9d9a; margin:0; }
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+    .tabs button { border:1px solid #363b3c; background:transparent; color:#aeb2ae; padding:10px 14px; border-radius:99px; cursor:pointer; }
+    .tabs button.active { background:#f4f1ea; color:#111416; border-color:#f4f1ea; }
+    .note { color:#777c7a; font-size:12px; margin:0 0 18px; }
+    .mock { display:none; min-height:650px; border:1px solid #333839; overflow:hidden; }
+    .mock.active { display:block; }
+    .bar { display:flex; justify-content:space-between; align-items:center; padding:20px 24px; border-bottom:1px solid var(--line); }
+    .mark { font-weight:800; letter-spacing:.12em; }
+    .nav { display:flex; gap:18px; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.1em; }
+    .nav span:last-child { color:var(--ink); }
+    .hero { padding:74px 7vw 62px; display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:end; }
+    .eyebrow { color:var(--muted); text-transform:uppercase; letter-spacing:.16em; font-size:11px; }
+    .hero h2 { font-size:clamp(48px,8vw,108px); line-height:.86; letter-spacing:-.08em; margin:16px 0 22px; max-width:800px; }
+    .hero p { color:var(--muted); max-width:420px; margin:0; }
+    .cta { display:inline-flex; margin-top:28px; background:var(--accent); color:#111416; padding:12px 16px; border-radius:3px; font-weight:700; text-decoration:none; }
+    .stack { display:grid; gap:10px; }
+    .stat { border-top:1px solid var(--line); padding:13px 0; display:flex; justify-content:space-between; color:var(--muted); }
+    .stat strong { color:var(--ink); font-weight:500; }
+    .section { border-top:1px solid var(--line); padding:38px 7vw; }
+    .section-head { display:flex; justify-content:space-between; gap:20px; align-items:baseline; margin-bottom:22px; }
+    .section h3 { margin:0; font-size:30px; letter-spacing:-.04em; }
+    .section-head span { color:var(--muted); font-size:12px; }
+    .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .project { border:1px solid var(--line); padding:18px; min-height:180px; display:flex; flex-direction:column; justify-content:space-between; background:rgba(255,255,255,.02); }
+    .project b { font-size:16px; letter-spacing:-.02em; }
+    .project p { color:var(--muted); font-size:12px; margin:10px 0 0; }
+    .project small { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:10px; }
+    .timeline { display:grid; grid-template-columns:repeat(2,1fr); gap:0 30px; }
+    .event { border-top:1px solid var(--line); padding:14px 0 20px; }
+    .event time { color:var(--accent); font-size:11px; }
+    .event p { margin:6px 0 0; color:var(--muted); font-size:13px; }
+    .contact { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:end; }
+    .contact h3 { font-size:clamp(38px,6vw,78px); line-height:.9; }
+    .contact p { color:var(--muted); }
+    .form { display:grid; gap:9px; }
+    .form input,.form textarea { width:100%; border:1px solid var(--line); background:transparent; color:var(--ink); padding:13px; resize:vertical; }
+    .form button { border:0; background:var(--accent); padding:13px; font-weight:700; cursor:pointer; }
+    .editorial { --bg:#f1ede5; --ink:#1a1c1a; --muted:#686c66; --line:#d7d2c7; --accent:#ec6a42; background:var(--bg); color:var(--ink); }
+    .editorial .mock-inner { background:var(--bg); }
+    .editorial .bar,.editorial .section { border-color:var(--line); }
+    .editorial .mark { font-family:Georgia,serif; letter-spacing:-.04em; font-size:21px; }
+    .editorial .hero h2,.editorial .section h3,.editorial .contact h3 { font-family:Georgia,serif; font-weight:500; }
+    .editorial .cta,.editorial .form button { background:var(--accent); }
+    .editorial .project { background:#e9e4da; border-color:var(--line); }
+    .signal { background:#071113; --line:#1d3637; --muted:#7fa0a0; --accent:#53e2c1; }
+    .signal .bar { font-family:ui-monospace,SFMono-Regular,monospace; }
+    .signal .hero h2,.signal .section h3,.signal .contact h3 { font-family:ui-monospace,SFMono-Regular,monospace; font-weight:500; letter-spacing:-.08em; }
+    .signal .hero h2::before { content:'> '; color:var(--accent); }
+    .signal .project { background:#0b1b1d; }
+    .signal .eyebrow,.signal .nav,.signal .event time,.signal .project small { font-family:ui-monospace,SFMono-Regular,monospace; }
+    .quiet { background:#fbfbf8; --bg:#fbfbf8; --ink:#202321; --muted:#707671; --line:#e1e4df; --accent:#3f65f1; color:var(--ink); }
+    .quiet .bar,.quiet .section { border-color:var(--line); }
+    .quiet .hero h2,.quiet .section h3,.quiet .contact h3 { font-weight:600; letter-spacing:-.07em; }
+    .quiet .project { border-color:var(--line); background:#fff; border-radius:12px; }
+    .quiet .cta,.quiet .form button { background:var(--accent); color:#fff; border-radius:7px; }
+    .quiet .stat strong,.quiet .project b { color:var(--ink); }
+    .bento { background:#e8eef2; --bg:#e8eef2; --ink:#13212b; --muted:#5f6f79; --line:#c5d0d6; --accent:#ff7659; color:var(--ink); }
+    .bento .bar,.bento .section { border-color:var(--line); }
+    .bento .hero h2,.bento .section h3,.bento .contact h3 { font-weight:700; letter-spacing:-.08em; }
+    .bento .project { background:#f7f9fa; border:0; border-radius:18px; box-shadow:0 10px 25px rgba(25,45,60,.08); }
+    .bento .project:nth-child(1) { background:#13212b; color:#f7f9fa; min-height:240px; }
+    .bento .project:nth-child(1) p { color:#b9c7ce; }
+    .bento .cta,.bento .form button { background:var(--accent); color:#13212b; border-radius:99px; }
+    .bento .hero { grid-template-columns:1.2fr .8fr; }
+    .bento .stat { background:#f7f9fa; border:0; border-radius:12px; padding:14px; margin-bottom:8px; }
+    .swiss { background:#f5f5f2; --bg:#f5f5f2; --ink:#171717; --muted:#707070; --line:#cfcfcb; --accent:#e31d1a; color:var(--ink); }
+    .swiss .bar,.swiss .section { border-color:var(--line); }
+    .swiss .mark { font-size:24px; letter-spacing:-.1em; }
+    .swiss .hero { grid-template-columns:1fr; min-height:430px; align-items:end; }
+    .swiss .hero h2,.swiss .section h3,.swiss .contact h3 { font-weight:800; letter-spacing:-.1em; }
+    .swiss .hero h2 { font-size:clamp(65px,12vw,150px); }
+    .swiss .stack { grid-template-columns:repeat(3,1fr); }
+    .swiss .stat { border-top:3px solid var(--ink); padding-top:10px; }
+    .swiss .cta,.swiss .form button { background:var(--accent); color:#fff; border-radius:0; }
+    .swiss .project { border:0; border-top:3px solid var(--ink); background:transparent; padding:16px 0; border-radius:0; }
+    .noir { background:#161616; --bg:#161616; --ink:#f3f0eb; --muted:#99958e; --line:#363432; --accent:#d8b487; color:var(--ink); }
+    .noir .bar,.noir .section { border-color:var(--line); }
+    .noir .hero h2,.noir .section h3,.noir .contact h3 { font-family:Georgia,serif; font-weight:400; letter-spacing:-.07em; }
+    .noir .hero h2 { font-size:clamp(58px,9vw,120px); }
+    .noir .cta,.noir .form button { background:var(--accent); color:#161616; border-radius:2px; }
+    .noir .project { border-color:var(--line); background:#1e1e1d; border-radius:2px; }
+    .noir .eyebrow,.noir .project small { color:var(--accent); }
+    @media (max-width:800px) { .hero,.contact { grid-template-columns:1fr; } .projects { grid-template-columns:1fr 1fr; } .timeline { grid-template-columns:1fr; } .nav { display:none; } }
+    @media (max-width:520px) { .shell { padding:28px 16px 50px; } .intro { display:block; } .intro p { margin-top:14px; } .projects { grid-template-columns:1fr; } .hero { padding:54px 24px 45px; } .section { padding:30px 24px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="intro"><h1>Portfolio remake<br><span style="color:#777c7a">design directions</span></h1><p>Three one-page concepts using Paolo Miguel C. Morato's existing biography, work, projects, timeline, resume, and contact details.</p></div>
+    <div class="tabs" role="tablist"><button class="active" data-target="editorial">01 / Editorial Grid</button><button data-target="signal">02 / Signal Systems</button><button data-target="quiet">03 / Quiet Studio</button><button data-target="bento">04 / Bento Blocks</button><button data-target="swiss">05 / Swiss Frame</button><button data-target="noir">06 / Noir Atelier</button></div>
+    <p class="note">Interactive preview: switch directions above. These are visual concepts only; the current React site is unchanged.</p>
+
+    <section id="editorial" class="mock editorial active"><div class="mock-inner">
+      <header class="bar"><div class="mark">PMCM / 01</div><nav class="nav"><span>About</span><span>Projects</span><span>Contact</span></nav></header>
+      <div class="hero"><div><div class="eyebrow">DocOps Engineer · Marikina City</div><h2>Building<br>clearer<br>systems.</h2><p>I’m Paolo Miguel C. Morato, a DocOps Engineer focused on AI automation, documentation platforms, and reliable CI/CD workflows.</p><a class="cta" href="#">Download resume ↗</a></div><div class="stack"><div class="stat"><span>Currently</span><strong>ITRS Phils Inc.</strong></div><div class="stat"><span>Education</span><strong>BS Computer Science · Cum Laude</strong></div><div class="stat"><span>Stack</span><strong>React / Python / Docker</strong></div></div></div>
+      <div class="section"><div class="section-head"><h3>Selected work</h3><span>01 — 05</span></div><div class="projects"><article class="project"><small>AI / 2025</small><div><b>Pulsecraft</b><p>Local voice generation studio with React, FastAPI, Qwen TTS and Whisper.</p></div></article><article class="project"><small>Web app / 2024</small><div><b>Barangay Management</b><p>PERN request system for certificates and IDs.</p></div></article><article class="project"><small>Commerce / 2023</small><div><b>UniLeather</b><p>MERN store with Stripe and PayPal payments.</p></div></article></div></div>
+      <div class="section"><div class="section-head"><h3>Experience & education</h3><span>2018 — now</span></div><div class="timeline"><div class="event"><time>SEP 2024 — PRESENT</time><p>DocOps Engineer at ITRS Phils Inc.; AI translation, documentation systems, SEO and CI/CD.</p></div><div class="event"><time>2024</time><p>RiverCast thesis project placed 2nd in a research competition.</p></div><div class="event"><time>AUG — NOV 2023</time><p>Full Stack Web Development Intern at iBuild.PH.</p></div><div class="event"><time>2020 — 2024</time><p>BS Computer Science, Polytechnic University of the Philippines, Cum Laude.</p></div></div></div>
+      <div class="section contact"><div><div class="eyebrow">Have a project in mind?</div><h3>Let’s make<br>something useful.</h3><p>pmorato187@gmail.com · +63 976 372 5142<br>GitHub · LinkedIn · Instagram · Facebook</p></div><form class="form"><input placeholder="Name"><input placeholder="Email"><textarea rows="4" placeholder="Tell me a little about it"></textarea><button>Send message ↗</button></form></div>
+    </div></section>
+
+    <section id="signal" class="mock signal"><header class="bar"><div class="mark">PMCM // ONLINE</div><nav class="nav"><span>01.about</span><span>02.work</span><span>03.contact</span></nav></header><div class="hero"><div><div class="eyebrow">DOCOPS_ENGINEER / AI_AUTOMATION</div><h2>Paolo Miguel<br>C. Morato</h2><p>Documentation, automation, and web systems that stay useful under pressure.</p><a class="cta" href="#">[ DOWNLOAD_CV ]</a></div><div class="stack"><div class="stat"><span>LOCATION</span><strong>MARIKINA_CITY</strong></div><div class="stat"><span>STATUS</span><strong>OPEN_TO_COLLAB</strong></div><div class="stat"><span>CORE_STACK</span><strong>TS · PY · REACT</strong></div></div></div><div class="section"><div class="section-head"><h3>WORK_LOG</h3><span>5 entries</span></div><div class="projects"><article class="project"><small>01 / PULSECRAFT</small><div><b>Voice generation studio</b><p>React · FastAPI · Qwen TTS · Whisper</p></div></article><article class="project"><small>02 / BARANGAY</small><div><b>Resident request system</b><p>PostgreSQL · Express · React · Node</p></div></article><article class="project"><small>03 / RIVERCAST</small><div><b>River level forecasting</b><p>Python · React · Flask · deep learning</p></div></article></div></div><div class="section contact"><div><div class="eyebrow">MESSAGE_CHANNEL: OPEN</div><h3>Let’s build<br>the next layer.</h3><p>pmorato187@gmail.com<br>portfolio.pmcm-dev.xyz</p></div><form class="form"><input placeholder="YOUR_NAME"><input placeholder="YOUR_EMAIL"><textarea rows="4" placeholder="YOUR_MESSAGE"></textarea><button>TRANSMIT_MESSAGE →</button></form></div></section>
+
+    <section id="quiet" class="mock quiet"><header class="bar"><div class="mark">PMCM</div><nav class="nav"><span>About</span><span>Projects</span><span>Contact</span></nav></header><div class="hero"><div><div class="eyebrow">DocOps Engineer · AI + developer experience</div><h2>Thoughtful tools<br>for real people.</h2><p>Hi, I’m Paolo. I build scalable web and automation solutions with a focus on performance, developer productivity, and user experience.</p><a class="cta" href="#">View resume</a></div><div class="stack"><div class="stat"><span>Based in</span><strong>Marikina, Philippines</strong></div><div class="stat"><span>Working at</span><strong>ITRS Phils Inc.</strong></div><div class="stat"><span>Graduated</span><strong>PUP · Cum Laude</strong></div></div></div><div class="section"><div class="section-head"><h3>A few things I’ve made</h3><span>Hover cards for links</span></div><div class="projects"><article class="project"><small>Featured project</small><div><b>Pulsecraft</b><p>A local AI voice generation studio for reusable voice profiles and cloned clips.</p></div></article><article class="project"><small>Academic project</small><div><b>RiverCast</b><p>Deep-learning river level forecasting system; 2nd place research competition.</p></div></article><article class="project"><small>Product build</small><div><b>UniLeather</b><p>MERN commerce experience with Stripe and PayPal.</p></div></article></div></div><div class="section"><div class="section-head"><h3>Journey so far</h3><span>2018 — 2024 — now</span></div><div class="timeline"><div class="event"><time>NOW</time><p>DocOps Engineer: AI translation workflows, docs systems, SEO and CI/CD.</p></div><div class="event"><time>2024</time><p>BS Computer Science at PUP, Cum Laude; RiverCast placed 2nd.</p></div><div class="event"><time>2023</time><p>Full Stack Web Development Intern at iBuild.PH.</p></div><div class="event"><time>CONTACT</time><p>Open to collaboration and useful, user-focused products.</p></div></div></div><div class="section contact"><div><div class="eyebrow">Say hello</div><h3>Have a good<br>question?</h3><p>174 Shoe Ave., San Roque, Marikina City<br>pmorato187@gmail.com · +63 976 372 5142</p></div><form class="form"><input placeholder="Your name"><input placeholder="Your email"><textarea rows="4" placeholder="Your message"></textarea><button>Send inquiry</button></form></div></section>
+    <section id="bento" class="mock bento"><header class="bar"><div class="mark">PMCM</div><nav class="nav"><span>About</span><span>Work</span><span>Contact</span></nav></header><div class="hero"><div><div class="eyebrow">DOCOPS ENGINEER / AI AUTOMATION</div><h2>Systems with<br>human edges.</h2><p>Paolo Miguel C. Morato builds documentation, automation, and web experiences that make complex work feel lighter.</p><a class="cta" href="#">Download resume ↗</a></div><div class="stack"><div class="stat"><span>Now</span><strong>ITRS Phils Inc.</strong></div><div class="stat"><span>Based</span><strong>Marikina, PH</strong></div><div class="stat"><span>Stack</span><strong>React · Python · Docker</strong></div></div></div><div class="section"><div class="section-head"><h3>Work, in blocks</h3><span>Tap a project to explore</span></div><div class="projects"><article class="project"><small>Featured · AI</small><div><b>Pulsecraft</b><p>Voice studio with reusable profiles, transcription and cloned clip generation.</p></div></article><article class="project"><small>Web · PERN</small><div><b>Barangay System</b><p>Online certificates and ID requests for residents.</p></div></article><article class="project"><small>Research · 2nd place</small><div><b>RiverCast</b><p>Deep learning forecast for Marikina River levels.</p></div></article></div></div><div class="section contact"><div><div class="eyebrow">Open to collaboration</div><h3>Let’s make<br>work flow.</h3><p>pmorato187@gmail.com<br>+63 976 372 5142 · LinkedIn · GitHub</p></div><form class="form"><input placeholder="Name"><input placeholder="Email"><textarea rows="4" placeholder="Message"></textarea><button>Start a conversation ↗</button></form></div></section>
+    <section id="swiss" class="mock swiss"><header class="bar"><div class="mark">PMCM.</div><nav class="nav"><span>01 About</span><span>02 Projects</span><span>03 Contact</span></nav></header><div class="hero"><div><div class="eyebrow">PAOLO MIGUEL C. MORATO / MARIKINA, PH</div><h2>DOCOPS<br>ENGINEER</h2><p>I build scalable web and automation solutions across documentation, AI workflows, and CI/CD.</p><a class="cta" href="#">GET RESUME →</a></div><div class="stack"><div class="stat"><span>Role</span><strong>DocOps Engineer</strong></div><div class="stat"><span>Education</span><strong>PUP · Cum Laude</strong></div><div class="stat"><span>Focus</span><strong>AI / DX / Web</strong></div></div></div><div class="section"><div class="section-head"><h3>SELECTED PROJECTS</h3><span>05 CASES</span></div><div class="projects"><article class="project"><small>01</small><div><b>Pulsecraft</b><p>Local AI voice generation studio / React, FastAPI, Python.</p></div></article><article class="project"><small>02</small><div><b>UniLeather</b><p>MERN commerce website / Stripe, PayPal.</p></div></article><article class="project"><small>03</small><div><b>LinkAlert</b><p>Android SMS malicious-link detector / Java, Python.</p></div></article></div></div><div class="section contact"><div><div class="eyebrow">CONTACT / 2026</div><h3>LET’S TALK.</h3><p>pmorato187@gmail.com<br>portfolio.pmcm-dev.xyz</p></div><form class="form"><input placeholder="NAME"><input placeholder="EMAIL"><textarea rows="4" placeholder="MESSAGE"></textarea><button>SEND →</button></form></div></section>
+    <section id="noir" class="mock noir"><header class="bar"><div class="mark">PMCM / PORTFOLIO</div><nav class="nav"><span>About</span><span>Projects</span><span>Contact</span></nav></header><div class="hero"><div><div class="eyebrow">DOCOPS ENGINEER · ITRS PHILS INC.</div><h2>Paolo Miguel<br>Morato</h2><p>Thoughtful systems, reliable automation, and clear documentation by Paolo Miguel C. Morato.</p><a class="cta" href="#">Download CV ↗</a></div><div class="stack"><div class="stat"><span>Currently</span><strong>AI + documentation workflows</strong></div><div class="stat"><span>Previously</span><strong>Full Stack Web Development</strong></div><div class="stat"><span>Origin</span><strong>PUP Computer Science</strong></div></div></div><div class="section"><div class="section-head"><h3>Selected work</h3><span>2023 — 2025</span></div><div class="projects"><article class="project"><small>AI STUDIO</small><div><b>Pulsecraft</b><p>Reusable voice profiles and cloned clip generation through a local web dashboard.</p></div></article><article class="project"><small>PUBLIC SERVICE</small><div><b>Barangay Management</b><p>A simpler way for residents to request certificates and IDs online.</p></div></article><article class="project"><small>RESEARCH</small><div><b>RiverCast</b><p>Deep-learning river-level forecasting; 2nd place research competition.</p></div></article></div></div><div class="section contact"><div><div class="eyebrow">Write anytime</div><h3>Good work<br>starts here.</h3><p>174 Shoe Ave., San Roque, Marikina City<br>pmorato187@gmail.com · +63 976 372 5142</p></div><form class="form"><input placeholder="Name"><input placeholder="Email"><textarea rows="4" placeholder="Message"></textarea><button>Send message ↗</button></form></div></section>
+  </main>
+  <script>document.querySelectorAll('.tabs button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.mock').forEach(m=>m.classList.remove('active'));button.classList.add('active');document.getElementById(button.dataset.target).classList.add('active')}));</script>
+</body>
+</html>

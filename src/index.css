@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
@@ -8,4 +12,20 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Keep the first viewport focused instead of vertically over-stretching the hero. */
+.hero {
+  min-height: 520px !important;
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+  align-items: center !important;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto !important;
+    padding-top: 75px !important;
+    padding-bottom: 70px !important;
+  }
 }

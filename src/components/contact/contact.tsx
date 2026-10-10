@@ -59,9 +59,7 @@ export const Contact = ({ className }: ContactProps) => {
                     <h1 className={styles.headerCont}>
                         CONTACT <br /> ME
                         <p className={styles.ptag}>
-                            <br /> 174 Shoe Ave., San Roque, Marikina City
                             <br /> pmorato187@gmail.com
-                            <br /> +63 976 372 5142
                             <br /> portfolio.pmcm-dev.xyz
                             <br /> <br />
                         </p>
